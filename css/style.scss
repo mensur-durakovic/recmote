@@ -15,6 +15,7 @@ html {
   font-weight: normal;
   color: #fafafa;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -462,7 +463,6 @@ a {
         height: 300px;
         cursor: pointer;
         flex: 1;
-        flex-basis: 33%;
 
         img {
           width: 100%;
@@ -553,11 +553,13 @@ a {
       justify-content: flex-start;
 
       &-text {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 17px;
-        color: #fafafa;
+        a {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 17px;
+          color: #fafafa;
+        }
       }
 
       &-arrow {
