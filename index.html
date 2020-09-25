@@ -7,14 +7,13 @@
     <title>Recmote</title>
     <link rel="icon" type="image/png" href="./assets/favicon.ico" />
 
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
     <!-- Javascript -->
@@ -22,6 +21,42 @@
 </head>
 
 <body>
+    <section class="sidedrawer">
+        <div class="sidedrawer-backdrop" onclick="toggleSidedrawer()"></div>
+        <div class="sidedrawer-menu">
+            <div class="sidedrawer-menu-top">
+                <img src="./assets/close.svg" alt="close" onclick="toggleSidedrawer()">
+            </div>
+            <div class="sidedrawer-menu-body">
+                <ul class="sidedrawer-menu-body-items">
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text sidedrawer-menu-body-item-active" href="#"
+                            onclick="setActiveSidedrawerItem(this)">Home</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="#" onclick="setActiveSidedrawerItem(this)">About
+                            us</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="#"
+                            onclick="setActiveSidedrawerItem(this)">Services</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="#" onclick="setActiveSidedrawerItem(this)">Our
+                            work</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="#" onclick="setActiveSidedrawerItem(this)">Get
+                            in touch</a>
+                    </li>
+                </ul>
+                <div class="sidedrawer-menu-body-language">
+                    <a class="sidedrawer-menu-body-language-item" href="#">Español</a>
+                    <a class="sidedrawer-menu-body-language-item" href="#">Català</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="main-video-wrapper">
         <header class="header">
@@ -30,7 +65,7 @@
                 <div class="header-right-button">
                     <a class="get-in-touch"> Get in touch </a>
                 </div>
-                <img src="./assets/hamburger.svg" alt="hamburger menu">
+                <img src="./assets/hamburger.svg" alt="hamburger menu" onclick="toggleSidedrawer()">
             </div>
         </header>
         <div class="main-title">
@@ -45,7 +80,7 @@
         <div class="main-chevron-wrapper">
             <img src="./assets/circle-chevron.svg" alt="chevron down">
         </div>
-        <video class="video-background" poster="./assets/girl.png" no-controls autoplay muted loop>
+        <video class="video-background" poster="./assets/main-poster.png" no-controls autoplay muted loop>
             <source src="./assets/durex-mute.mp4" type="video/mp4"></video>
     </section>
 

@@ -42,6 +42,14 @@ a {
   user-select: none; /* Standard */
 }
 
+/*
+--- RESETS END ---
+*/
+
+/*
+--- MAIN PAGE START ---
+*/
+
 .video-background {
   /* class name used in javascript too */
   width: 100vw; /* width needs to be set to 100% */
@@ -54,11 +62,16 @@ a {
 
 .main-video-wrapper {
   width: 100%;
-  height: 100%;
+  height: 70%;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .header {
@@ -239,3 +252,164 @@ a {
     }
   }
 }
+
+/*
+--- MAIN PAGE END ---
+*/
+
+/*
+--- SIDEDRAWER START ---
+*/
+
+.sidedrawer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1;
+  box-sizing: border-box;
+
+  &-active {
+    display: flex;
+  }
+
+  &-backdrop {
+    display: none;
+    box-sizing: border-box;
+
+    @media (min-width: 768px) {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #21212b;
+      opacity: 0.6;
+    }
+  }
+
+  &-menu {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    padding: 70px;
+
+    @media (min-width: 768px) {
+      width: 480px;
+      min-width: 480px;
+      display: block;
+      padding: 62px 90px;
+    }
+
+    &-top {
+      width: 100%;
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
+
+      img {
+        height: 32px;
+        min-height: 32px;
+        max-height: 32px;
+        width: 32px;
+        min-width: 32px;
+        max-width: 32px;
+        cursor: pointer;
+      }
+    }
+
+    &-body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &-items {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 5px;
+
+        @media (min-width: 768px) {
+          margin-bottom: 0;
+        }
+      }
+
+      &-item {
+        &-text {
+          font-family: "Bebas Neue", cursive;
+          font-style: normal;
+          font-weight: normal;
+          color: #21212b;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 54px;
+          line-height: 65px;
+          cursor: pointer;
+
+          @media (min-width: 768px) {
+            font-size: 70px;
+            line-height: 90px;
+          }
+
+          &:hover {
+            color: #c13d1c;
+          }
+        }
+
+        &-active {
+          color: #c13d1c !important;
+        }
+      }
+
+      &-language {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        &-item {
+          font-weight: 500;
+          color: #21212b;
+          font-size: 24px;
+          line-height: 29px;
+          cursor: pointer;
+
+          &:hover {
+            color: #c13d1c;
+          }
+
+          @media (min-width: 768px) {
+            font-size: 32px;
+            line-height: 39px;
+          }
+
+          &-active {
+            color: #c13d1c !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+--- SIDEDRAWER END ---
+*/
