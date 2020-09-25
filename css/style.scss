@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200;300;400;500;700;900&display=swap");
+/*
+--- RESETS START ---
+*/
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  color: #8083a3;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  color: #fafafa;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+button,
+a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.video-background {
+  /* class name used in javascript too */
+  width: 100vw; /* width needs to be set to 100% */
+  height: 100vh; /* height needs to be set to 100% */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.main-video-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  height: 72px;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #21212b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 25px;
+  transition: 0.2s;
+
+  @media (min-width: 1025px) {
+    height: 96px;
+    background-color: transparent;
+    padding: 52px 84px 0 84px;
+  }
+
+  &-left {
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+
+    &-button {
+      display: none;
+      @media (min-width: 1025px) {
+        display: block;
+      }
+    }
+
+    img {
+      height: 40px;
+      min-height: 40px;
+      max-height: 40px;
+      width: 30px;
+      min-width: 30px;
+      max-width: 30px;
+      margin-left: 28px;
+      cursor: pointer;
+    }
+  }
+}
+
+.get-in-touch {
+  background-color: #c13d1c;
+  border-radius: 8px;
+  height: 44px;
+  min-height: 44px;
+  max-height: 44px;
+  min-width: 152px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 16px 12px;
+  border: 1px solid #c13d1c;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #fafafa;
+    color: #c13d1c;
+    border: 1px solid #c13d1c;
+  }
+
+  &:active {
+    background-color: #f4e7e4;
+    color: #c13d1c;
+    border: 1px solid #c13d1c;
+  }
+
+  &-mobile {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 24px;
+
+      @media (min-width: 1025px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.main {
+  &-title {
+    height: calc(
+      100vh - 72px - 118px
+    ); //minus header and chevron wrapper height
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    transition: 0.2s;
+
+    @media (min-width: 1025px) {
+      padding: 0;
+      align-items: center;
+    }
+
+    &-text {
+      font-family: "Bebas Neue", cursive;
+      font-style: normal;
+      font-size: 130px;
+      line-height: 156px;
+      text-align: left;
+      display: none;
+
+      @media (min-width: 1025px) {
+        display: block;
+      }
+
+      &-mobile {
+        font-family: "Bebas Neue", cursive;
+        font-style: normal;
+        font-size: 54px;
+        line-height: 54px;
+        text-align: left;
+        display: block;
+
+        @media (min-width: 1025px) {
+          display: none;
+        }
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 400;
+      font-style: normal;
+      text-align: left;
+
+      @media (min-width: 1025px) {
+        font-size: 42px;
+        line-height: 51px;
+        max-width: 964px;
+      }
+    }
+  }
+
+  &-chevron {
+    &-wrapper {
+      height: 118px;
+      margin-bottom: 65px;
+      box-sizing: border-box;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      display: none;
+
+      @media (min-width: 1025px) {
+        display: flex;
+      }
+
+      img {
+        height: 53px;
+        min-height: 53px;
+        max-height: 53px;
+        width: 53px;
+        min-width: 53px;
+        max-width: 53px;
+        cursor: pointer;
+      }
+    }
+  }
+}
