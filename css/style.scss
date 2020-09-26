@@ -47,6 +47,36 @@ a {
   user-select: none; /* Standard */
 }
 
+@-webkit-keyframes slide-right {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide-right {
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100vw;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100vw;
+  }
+}
+
 /*
 --- RESETS END ---
 */
@@ -63,6 +93,10 @@ a {
   left: 0;
   top: 0;
   z-index: -1;
+}
+
+.video-modal {
+  color: #21212b;
 }
 
 .main-video-wrapper {
@@ -537,27 +571,35 @@ a {
         &-hover {
           position: absolute;
           top: 0;
+          left: -100vw;
           z-index: 1;
           width: 100%;
           height: 100%;
           padding: 25px;
           box-sizing: border-box;
-          display: none;
+          display: flex;
           flex-direction: column;
           align-items: flex-start;
           justify-content: flex-end;
+          display: flex;
 
           &-visible {
-            display: flex;
+            -webkit-animation: slide-right 0.8s forwards;
+            animation: slide-right 0.8s forwards;
+          }
+
+          &-not-visible {
+            -webkit-animation: slide-left 0.8s forwards;
+            animation: slide-left 0.8s forwards;
           }
 
           img {
             width: 20px;
             min-width: 20px;
             max-width: 20px;
-            height: 17px;
-            min-height: 17px;
-            max-height: 17px;
+            height: 23px;
+            min-height: 23px;
+            max-height: 23px;
             margin-bottom: 10px;
 
             @media (min-width: 768px) {
@@ -644,9 +686,6 @@ a {
         line-height: 51px;
         max-width: 964px;
       }
-    }
-
-    &-button {
     }
   }
 }
@@ -921,4 +960,267 @@ a {
 
 /*
 --- FOOTER END ---
+*/
+
+/*
+--- ABOUT US START ---
+*/
+
+.about-us {
+  width: 100%;
+  background-color: #21212b;
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 0 24px 24px 24px;
+    @media (min-width: 768px) {
+      margin-top: 54px;
+      padding: 0 140px 100px 140px;
+    }
+
+    &-text {
+      font-family: "Bebas Neue", cursive;
+      font-weight: normal;
+      font-size: 30px;
+      line-height: 36px;
+      @media (min-width: 768px) {
+        font-size: 70px;
+        line-height: 84px;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 20px;
+      max-width: 1160px;
+      @media (min-width: 768px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+  }
+
+  &-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #21212b;
+
+    @media (min-width: 768px) {
+      padding-bottom: 60px;
+    }
+
+    &-row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      &-item {
+        position: relative;
+        height: 300px;
+        cursor: pointer;
+        min-width: 100%;
+        flex: 1;
+
+        @media (min-width: 768px) {
+          min-width: auto;
+        }
+
+        a {
+          width: 100%;
+          height: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &-static {
+          min-width: 100%;
+          width: 100%;
+          height: 100%;
+          padding: 25px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-end;
+          display: flex;
+
+          @media (min-width: 768px) {
+            padding: 40px;
+          }
+
+          &-web {
+            font-family: "Bebas Neue", cursive;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 23px;
+            @media (min-width: 768px) {
+              font-size: 25px;
+              line-height: 30px;
+            }
+          }
+
+          &-title {
+            font-family: "Bebas Neue", cursive;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 36px;
+            text-transform: uppercase;
+
+            @media (min-width: 768px) {
+              font-size: 50px;
+              line-height: 60px;
+            }
+          }
+
+          &-description {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+
+            @media (min-width: 768px) {
+              font-size: 24px;
+              line-height: 29px;
+            }
+          }
+
+          &-variant0 {
+            background-color: #fafafa;
+            color: #21212b;
+          }
+
+          &-variant1 {
+            background-color: #c13d1c;
+            color: #fafafa;
+          }
+          &-variant2 {
+            background-color: #fafafa;
+            color: #c13d1c;
+          }
+        }
+
+        &-hover {
+          position: absolute;
+          top: 0;
+          left: -100vw;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          padding: 25px;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-end;
+          display: flex;
+
+          &-visible {
+            -webkit-animation: slide-right 0.8s forwards;
+            animation: slide-right 0.8s forwards;
+          }
+
+          &-not-visible {
+            -webkit-animation: slide-left 0.8s forwards;
+            animation: slide-left 0.8s forwards;
+          }
+
+          img {
+            width: 35px;
+            min-width: 35px;
+            max-width: 35px;
+            height: 24px;
+            min-height: 24px;
+            max-height: 24px;
+            margin-bottom: 10px;
+
+            @media (min-width: 768px) {
+              width: 35px;
+              min-width: 35px;
+              max-width: 35px;
+              height: 24px;
+              min-height: 24px;
+              max-height: 24px;
+              margin-bottom: 15px;
+            }
+          }
+
+          @media (min-width: 768px) {
+            padding: 40px;
+          }
+
+          &-title {
+            font-family: "Bebas Neue", cursive;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            line-height: 36px;
+            text-transform: uppercase;
+
+            @media (min-width: 768px) {
+              font-size: 50px;
+              line-height: 60px;
+            }
+          }
+
+          &-description {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+
+            @media (min-width: 768px) {
+              font-size: 24px;
+              line-height: 29px;
+            }
+          }
+
+          &-variant0 {
+            background-color: #fafafa;
+            color: #21212b;
+          }
+
+          &-variant1 {
+            background-color: #c13d1c;
+            color: #fafafa;
+          }
+          &-variant2 {
+            background-color: #fafafa;
+            color: #c13d1c;
+          }
+        }
+      }
+    }
+  }
+
+  &-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+/*
+--- ABOUT US END ---
 */

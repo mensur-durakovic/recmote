@@ -7,17 +7,11 @@
     <title>Recmote - Audio Post Production</title>
     <link rel="icon" type="image/png" href="./assets/favicon.ico" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- jQuery Modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
 
-    <!-- Javascript -->
-    <script src="../js/main.js"></script>
+
 </head>
 
 <body>
@@ -32,7 +26,7 @@
             <div class="sidedrawer-menu-body">
                 <ul class="sidedrawer-menu-body-items">
                     <li class="sidedrawer-menu-body-item">
-                        <a class="sidedrawer-menu-body-item-text sidedrawer-menu-body-item-active" href="#"
+                        <a class="sidedrawer-menu-body-item-text sidedrawer-menu-body-item-active" href="./index.html"
                             onclick="setActiveSidedrawerItem(this)">Home</a>
                     </li>
                     <li class="sidedrawer-menu-body-item">
@@ -45,12 +39,12 @@
                             onclick="setActiveSidedrawerItem(this)">Services</a>
                     </li>
                     <li class="sidedrawer-menu-body-item">
-                        <a class="sidedrawer-menu-body-item-text" href="/pages/our-work.html"
+                        <a class="sidedrawer-menu-body-item-text" href="./pages/our-work.html"
                             onclick="setActiveSidedrawerItem(this)">Our
                             work</a>
                     </li>
                     <li class="sidedrawer-menu-body-item">
-                        <a class="sidedrawer-menu-body-item-text" href="/pages/get-in-touch.html"
+                        <a class="sidedrawer-menu-body-item-text" href="./pages/get-in-touch.html"
                             onclick="setActiveSidedrawerItem(this)">Get
                             in touch</a>
                     </li>
@@ -103,7 +97,7 @@
             <source src="./assets/durex-mute.mp4" type="video/mp4"></video>
     </section>
 
-    <!-- featured work section-->
+    <!-- featured work section -->
     <section class="featured-work" id="featured-work">
         <div class="featured-work-title">
             featured
@@ -111,32 +105,13 @@
         <div class="featured-work-commercials">
             <div class="featured-work-commercials-row">
                 <div class="featured-work-commercials-row-item">
-                    <img src=" ./assets/foot.png" class="featured-work-commercials-row-item-image">
-                    <div
-                        class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant0">
-                        <img class="featured-work-commercials-row-item-hover-icon" src="./assets/play-black.svg"
-                            alt="play arrow" onclick="playVideo()">
-                        <span class="featured-work-commercials-row-item-hover-title">oxfam intermon</span>
-                        <span class="featured-work-commercials-row-item-hover-description">Ayuda inmediata</span>
-                    </div>
-                    <div
-                        class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant1">
-                        <img src="./assets/play-white.svg" alt="play arrow">
-                        <span class="featured-work-commercials-row-item-hover-title">optrex</span>
-                        <span class="featured-work-commercials-row-item-hover-description">Tinniest footprint</span>
-                    </div>
-                    <div
-                        class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant2">
-                        <img src="./assets/play-red.svg" alt="play arrow">
-                        <span class="featured-work-commercials-row-item-hover-title">skoda fabia</span>
-                        <span class="featured-work-commercials-row-item-hover-description">Drive like crazy</span>
-                    </div>
+                    <img src=" ./assets/foot.png" alt="foot">
                 </div>
                 <div class="featured-work-commercials-row-item">
-                    <img src="./assets/painting.png">
+                    <img src="./assets/painting.png" alt="painting">
                 </div>
                 <div class="featured-work-commercials-row-item">
-                    <img src="./assets/car.png">
+                    <img src="./assets/car.png" alt="car">
                 </div>
             </div>
             <div class="featured-work-commercials-row">
@@ -171,6 +146,7 @@
         </div>
     </section>
 
+    <!-- footer -->
     <footer class="footer">
         <div class="footer-head">
             <div class="footer-head-left">
@@ -270,6 +246,20 @@
         </div>
     </footer>
 
+    <div id="video-modal" class="modal">
+        <p class="video-modal">Modal for video player</p>
+        <a href="#" rel="modal:close" class="video-modal">Close</a>
+    </div>
+
+    <!-- Javascript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
