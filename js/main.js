@@ -117,6 +117,8 @@ $(function () {
     scaleToFill();
   });
 
+  $("#sidedrawer-home").addClass("sidedrawer-menu-body-item-active");
+
   //event for hover cards
   $(".featured-work-commercials-row-item").hover(hoverIn, hoverOut);
 

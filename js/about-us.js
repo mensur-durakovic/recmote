@@ -1,3 +1,6 @@
+let sidedrawerOpen = false;
+let activeSidedrawerItem = "about-us";
+
 const variant0 = `<a href="mailto:hola@recmotestudio.com" class="underlined-hover"> 
 <div class="about-us-team-row-item-hover about-us-team-row-item-hover-variant0">
     <img src="../assets/envelope-black.svg" alt="black envelope">
@@ -17,6 +20,24 @@ const variant2 = `<a href="mailto:hola@recmotestudio.com" class="underlined-hove
     <span class="about-us-team-row-item-hover-description">Manager director</span>
 </div></a>`;
 
+function toggleSidedrawer() {
+  if (!sidedrawerOpen) {
+    $(".sidedrawer").addClass("sidedrawer-active");
+    sidedrawerOpen = true;
+  } else {
+    $(".sidedrawer").removeClass("sidedrawer-active");
+    sidedrawerOpen = false;
+  }
+}
+
+function setActiveSidedrawerItem(newActiveSidedrawerItem) {
+  $(".sidedrawer-menu-body-item-text").removeClass(
+    "sidedrawer-menu-body-item-active"
+  );
+
+  $(newActiveSidedrawerItem).addClass("sidedrawer-menu-body-item-active");
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -29,6 +50,7 @@ function hoverIn() {
   $(".about-us-team-row-item-hover").addClass(
     "about-us-team-row-item-hover-not-visible"
   );
+
   const randomNumber = getRandomInt(3); // 0,1,2
   if (randomNumber === 0) {
     $(this).append(variant0);
@@ -53,6 +75,10 @@ function hoverOut() {
 }
 
 $(function () {
+  $(".sidedrawer-menu-body-item-text").removeClass(
+    "sidedrawer-menu-body-item-active"
+  );
+  $("#sidedrawer-about-us").addClass("sidedrawer-menu-body-item-active");
   //event for hover cards
   $(".about-us-team-row-item").hover(hoverIn, hoverOut);
 });
