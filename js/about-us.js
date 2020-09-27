@@ -47,23 +47,16 @@ function hoverIn() {
     return;
   }
 
-  $(".about-us-team-row-item-hover").addClass(
-    "about-us-team-row-item-hover-not-visible"
-  );
-
   const randomNumber = getRandomInt(3); // 0,1,2
-  if (randomNumber === 0) {
-    $(this).append(variant0);
-  } else if (randomNumber === 1) {
-    $(this).append(variant1);
-  } else if (randomNumber === 2) {
-    $(this).append(variant2);
-  }
   const className = `.about-us-team-row-item-hover-variant${randomNumber}`;
   const result = $(this).find(className);
   result
-    .removeClass("about-us-team-row-item-hover-not-visible")
-    .addClass("about-us-team-row-item-hover-visible");
+    .removeClass(
+      "about-us-team-row-item-hover-not-visible animate__animated animate__slideOutLeft animate__fast"
+    )
+    .addClass(
+      "about-us-team-row-item-hover-visible animate__animated animate__slideInLeft animate__fast"
+    );
 }
 function hoverOut() {
   if ($(this).data("item-type") !== "hover") {
@@ -71,7 +64,7 @@ function hoverOut() {
   }
   const result = $(this).find(".about-us-team-row-item-hover-visible");
 
-  $(result).addClass("about-us-team-row-item-hover-not-visible");
+  $(result).addClass("animate__animated animate__slideOutLeft animate__fast");
 }
 
 $(function () {

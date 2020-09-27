@@ -23,18 +23,6 @@ const variant2 = `<a href="#video-modal" rel="modal:open">
 </div>
 </a>`;
 
-function isMobile() {
-  const result = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
-  console.log("result", result);
-  if (result) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
 function scaleToFill() {
   $("video.video-background").each(function (_, videoTag) {
     const $video = $(videoTag);
@@ -75,38 +63,26 @@ function getRandomInt(max) {
 }
 
 function hoverIn() {
-  $(".featured-work-commercials-row-item-hover").addClass(
-    "featured-work-commercials-row-item-hover-not-visible"
-  );
   const randomNumber = getRandomInt(3); // 0,1,2
-  if (randomNumber === 0) {
-    $(this).append(variant0);
-  } else if (randomNumber === 1) {
-    $(this).append(variant1);
-  } else if (randomNumber === 2) {
-    $(this).append(variant2);
-  }
   const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
   const result = $(this).find(className);
   result
-    .removeClass("featured-work-commercials-row-item-hover-not-visible")
-    .addClass("featured-work-commercials-row-item-hover-visible");
+    .removeClass(
+      "featured-work-commercials-row-item-hover-not-visible animate__animated animate__slideOutLeft animate__fast"
+    )
+    .delay(1000)
+    .addClass(
+      "featured-work-commercials-row-item-hover-visible animate__animated animate__slideInLeft animate__fast"
+    );
 }
-function hoverOut() {
-  const result = $(this).find(
-    ".featured-work-commercials-row-item-hover-visible"
-  );
+function hoverOut(e) {
+  e.stopPropagation();
+  const result = $(this).find(".featured-work-commercials-row-item-hover");
 
-  $(result).addClass("featured-work-commercials-row-item-hover-not-visible");
+  $(result).addClass("animate__animated animate__slideOutLeft animate__fast");
 }
-
 function playVideo() {
   $("#video-modal").modal("show");
-  if (isMobile()) {
-    console.log("mobile true!");
-  } else {
-    console.log("mobile false!");
-  }
 }
 
 $(function () {
@@ -117,6 +93,9 @@ $(function () {
     scaleToFill();
   });
 
+  $(".sidedrawer-menu-body-item-text").removeClass(
+    "sidedrawer-menu-body-item-active"
+  );
   $("#sidedrawer-home").addClass("sidedrawer-menu-body-item-active");
 
   //event for hover cards

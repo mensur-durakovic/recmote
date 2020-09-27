@@ -24,10 +24,8 @@ function setActiveSidedrawerItem(newActiveSidedrawerItem) {
 
 function enableButton() {
   if (inputNameValid && inputEmailValid && inputMessageValid) {
-    console.log("button enabled");
     $("#contact-form-button").prop("disabled", false);
   } else {
-    console.log("button disabled");
     $("#contact-form-button").prop("disabled", true);
   }
 }
@@ -46,7 +44,6 @@ function inputMessageChanged(val) {
 }
 
 function submitForm() {
-  console.log("submitted!");
   $(".contact-form-submit").hide(200);
   $(".contact-form-load").addClass("contact-form-load-visible");
 
