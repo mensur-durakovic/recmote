@@ -1,5 +1,5 @@
 let sidedrawerOpen = false;
-let activeSidedrawerItem = "about-us";
+let activeSidedrawerItem = "services";
 
 function toggleSidedrawer() {
   if (!sidedrawerOpen) {

@@ -1371,13 +1371,9 @@ a {
     }
 
     @media (min-width: 1025px) {
-      display: block;
       height: 810px;
       min-height: 810px;
       max-height: 810px;
-      width: 100vw;
-      min-width: 100vw;
-      max-width: 100vw;
     }
 
     &-image {
@@ -1521,4 +1517,68 @@ a {
 
 /*
 --- SERVICES END ---
+*/
+
+/*
+--- OUR WORK START ---
+*/
+
+.our-work {
+  width: 100%;
+  background-color: #21212b;
+
+  @media (min-width: 768px) {
+    padding-bottom: 60px;
+  }
+
+  &-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 0 24px 24px 24px;
+
+    @media (min-width: 768px) {
+      margin-top: 54px;
+      padding: 0 140px 24px 140px;
+    }
+
+    &-text {
+      font-family: "Bebas Neue", cursive;
+      font-weight: normal;
+      font-size: 30px;
+      line-height: 36px;
+
+      @media (min-width: 768px) {
+        font-size: 70px;
+        line-height: 84px;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 20px;
+      max-width: 1160px;
+      @media (min-width: 768px) {
+        font-size: 24px;
+        line-height: 29px;
+      }
+    }
+  }
+
+  &-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+/*
+--- OUR WORK END ---
 */
