@@ -28,6 +28,7 @@ $(function () {
 
 $(document).ready(function () {
   $(".services-carousel-items").slick({
+    draggable: false,
     infinite: true,
     autoplay: true,
     slidesToShow: 1,
