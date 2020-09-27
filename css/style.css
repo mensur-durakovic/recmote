@@ -740,9 +740,6 @@ a {
   padding: 25px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -753,17 +750,21 @@ a {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .featured-work-commercials-row-item-hover-visible {
-  -webkit-animation: slide-right 0.8s forwards;
-  animation: slide-right 0.8s forwards;
+  -webkit-animation: slide-right 0.7s forwards 0.3s;
+  animation: slide-right 0.7s forwards 0.3s;
 }
 
 .featured-work-commercials-row-item-hover-not-visible {
-  -webkit-animation: slide-left 0.8s forwards;
-  animation: slide-left 0.8s forwards;
+  -webkit-animation: slide-left 0.7s forwards 0.3s;
+  animation: slide-left 0.7s forwards 0.3s;
 }
 
 .featured-work-commercials-row-item-hover img {

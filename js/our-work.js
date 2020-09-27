@@ -62,13 +62,13 @@ function hoverIn() {
     "featured-work-commercials-row-item-hover-not-visible"
   );
   const randomNumber = getRandomInt(3); // 0,1,2
-  if (randomNumber === 0) {
+  /* if (randomNumber === 0) {
     $(this).append(variant0);
   } else if (randomNumber === 1) {
     $(this).append(variant1);
   } else if (randomNumber === 2) {
     $(this).append(variant2);
-  }
+  } */
   const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
   const result = $(this).find(className);
   result
