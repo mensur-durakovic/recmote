@@ -1,27 +1,17 @@
 let sidedrawerOpen = false;
 let activeSidedrawerItem = "home";
-
-const variant0 = `<a href="#video-modal" rel="modal:open">
-<div class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant0">
-<img src="./assets/play-black.svg" alt="play arrow">
-<span class="featured-work-commercials-row-item-hover-title">oxfam intermon</span>
-<span class="featured-work-commercials-row-item-hover-description">Ayuda inmediata</span>
-</div>
-</a>`;
-const variant1 = `<a href="#video-modal" rel="modal:open">
-<div class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant1">
-<img src="./assets/play-white.svg" alt="play arrow">
-<span class="featured-work-commercials-row-item-hover-title">optrex</span>
-<span class="featured-work-commercials-row-item-hover-description">Tinniest footprint</span>
-</div>
-</a>`;
-const variant2 = `<a href="#video-modal" rel="modal:open">
-<div class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant2">
-<img src="./assets/play-red.svg" alt="play arrow">
-<span class="featured-work-commercials-row-item-hover-title">skoda fabia</span>
-<span class="featured-work-commercials-row-item-hover-description">Drive like crazy</span>
-</div>
-</a>`;
+let myPlayer;
+const videoModal = `<div id="test-popup" class="player mfp-hide">
+<video id="example_video_1" class="video-js vjs-default-skin vjs-nofull vjs-nopicinpic vjs-volume-last" controls
+    disablePictureInPicture preload="auto" style="height:50vh; width:100%" data-setup="{}">
+    <source src="./assets/Durex_sound.mp4" type='video/mp4' />
+    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser
+        that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+</video>
+</div>`;
+const spanish = "Español";
+const catalan = "Català";
+const english = "English";
 
 function scaleToFill() {
   $("video.video-background").each(function (_, videoTag) {
@@ -58,34 +48,121 @@ function setActiveSidedrawerItem(newActiveSidedrawerItem) {
   $(newActiveSidedrawerItem).addClass("sidedrawer-menu-body-item-active");
 }
 
+function changeLanguage(element) {
+  if (element.id === "language1" || element.id === "language1-footer") {
+    if (element.text === spanish) {
+      $("#language1").text(english);
+      $("#language1-footer").text(english);
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+    } else if (element.text === english) {
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+    }
+  } else if (element.id === "language2" || element.id === "language2-footer") {
+    if (element.text === catalan) {
+      $("#language2").text(english);
+      $("#language2-footer").text(english);
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+    } else if (element.text === english) {
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+    }
+  }
+}
+
+function isMobile() {
+  const result = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+  console.log("result", result);
+  if (result) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 function hoverIn() {
-  const randomNumber = getRandomInt(3); // 0,1,2
-  const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
-  const result = $(this).find(className);
-  result
-    .removeClass(
-      "featured-work-commercials-row-item-hover-not-visible animate__animated animate__slideOutLeft animate__fast"
-    )
-    .delay(1000)
-    .addClass(
-      "featured-work-commercials-row-item-hover-visible animate__animated animate__slideInLeft animate__fast"
-    );
+  if (!isMobile()) {
+    const randomNumber = getRandomInt(3); // 0,1,2
+    const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
+    const result = $(this).find(className);
+    result
+      .removeClass(
+        "featured-work-commercials-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
+      )
+      .addClass(
+        "featured-work-commercials-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
+      )
+      .click(hoverElementClicked);
+  }
 }
-function hoverOut(e) {
-  e.stopPropagation();
-  const result = $(this).find(".featured-work-commercials-row-item-hover");
+function hoverOut() {
+  if (!isMobile()) {
+    const result = $(this).find(".featured-work-commercials-row-item-hover");
+    $(result).addClass("animate__animated animate__fadeOut animate__fast");
+  }
+}
 
-  $(result).addClass("animate__animated animate__slideOutLeft animate__fast");
-}
-function playVideo() {
-  $("#video-modal").modal("show");
+function itemClicked() {
+  console.log("itemClicked");
+  if (isMobile()) {
+    $(".featured-work-commercials-row-item-hover")
+      .addClass("animate__animated animate__fadeOut animate__fast")
+      .addClass("featured-work-commercials-row-item-hover-not-visible");
+    const randomNumber = getRandomInt(3); // 0,1,2
+    const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
+    const result = $(this).find(className);
+    result
+      .removeClass(
+        "featured-work-commercials-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
+      )
+      .delay(1000)
+      .addClass(
+        "featured-work-commercials-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
+      );
+    $(".featured-work-commercials-row-item-hover").click(hoverElementClicked);
+  }
 }
 
-$(function () {
+function hoverElementClicked() {
+  console.log("hoverElementClicked");
+  /* $(".test-popup").show();
+    myPlayer.play(); */
+  myPlayer = videojs("example_video_1");
+  $.magnificPopup.open({
+    items: {
+      src: "#test-popup",
+      midClick: true,
+      type: "inline",
+    },
+    callbacks: {
+      open: function () {
+        $.magnificPopup.instance.close = function () {
+          // Do whatever else you need to do here
+          myPlayer.currentTime(0);
+          myPlayer.pause();
+
+          // Call the original close method to close the popup
+          $.magnificPopup.proto.close.call(this);
+        };
+      },
+    },
+  });
+  myPlayer.play();
+}
+
+$("document").ready(function () {
   //main video background scale fit
   scaleToFill();
   $(".video-background").on("loadeddata", scaleToFill);
@@ -100,6 +177,7 @@ $(function () {
 
   //event for hover cards
   $(".featured-work-commercials-row-item").hover(hoverIn, hoverOut);
+  $(".featured-work-commercials-row-item").click(itemClicked);
 
   let currentScrollPos = 0;
   let timeout = null;
@@ -110,8 +188,9 @@ $(function () {
         clearTimeout(timeout);
         timeout = null;
         if ($("body").scrollTop() <= currentScrollPos) {
+          //scrolls up
           //check if user scrolled past point of title for featured work
-          if ($("body").scrollTop() < $("#featured-work").position().top) {
+          if ($("#featured-work").position().top > 200) {
             document.body.scrollTo({ top: 0, behavior: "smooth" });
           }
         }
