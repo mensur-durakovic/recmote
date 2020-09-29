@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Recmote" />
+    <meta property="og:title" content="Recmote - Audio Post Production" />
+    <meta property="og:description" content="Recmote - Audio Post Production" />
+    <meta property="og:image" content="./assets/logo.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://recmote.vercel.app/">
+    <title>Recmote - Audio Post Production</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.ico" />
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- sidedrawer menu -->
+    <section class="sidedrawer">
+        <div class="sidedrawer-backdrop" onclick="toggleSidedrawer()"></div>
+        <div class="sidedrawer-menu">
+            <div class="sidedrawer-menu-top">
+                <img src="../assets/close.svg" alt="close" onclick="toggleSidedrawer()">
+            </div>
+            <div class="sidedrawer-menu-body">
+                <ul class="sidedrawer-menu-body-items">
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text sidedrawer-menu-body-item-active" href="../index.html"
+                            id="sidedrawer-home" onclick="setActiveSidedrawerItem(this)">Home</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/about-us.html" id="sidedrawer-about-us"
+                            onclick="setActiveSidedrawerItem(this)">About
+                            us</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/services.html" id="sidedrawer-services"
+                            onclick="setActiveSidedrawerItem(this)">Services</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/our-work.html" id="sidedrawer-our-work"
+                            onclick="setActiveSidedrawerItem(this)">Our
+                            work</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/get-in-touch.html"
+                            id="sidedrawer-get-in-touch" onclick="setActiveSidedrawerItem(this)">Get
+                            in touch</a>
+                    </li>
+                </ul>
+                <div class="sidedrawer-menu-body-language">
+                    <a class="sidedrawer-menu-body-language-item" href="#" id="language1"
+                        onclick="changeLanguage(this)">Español</a>
+                    <a class="sidedrawer-menu-body-language-item" href="#" id="language2"
+                        onclick="changeLanguage(this)">Català</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="header-left-logo-shape">
+                <a href="../index.html">
+                    <img src="../assets/logo.svg" alt="recmote logo">
+                </a>
+            </div>
+            <div class="header-left-logo-text">
+                <a href="../index.html">
+                    <img src="../assets/recmote.svg" alt="recmote text">
+                </a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-right-button">
+                <a class="get-in-touch" href="../pages/get-in-touch.html"> Get in touch </a>
+            </div>
+            <img src="../assets/hamburger.svg" alt="hamburger menu" onclick="toggleSidedrawer()">
+        </div>
+    </header>
+
+    <!-- privacy-policy section-->
+    <section class="info" id="top-of-page">
+
+        <h1 class="info-title">
+            Política de cookies
+        </h1>
+
+        <div class="info-item">
+            <p class="info-item-title">1. Uso de cookies<br><br></p>
+            <p class="info-item-text">
+                La página web <a href="www.recmotestudio.com" target="_blank"
+                    class="underlined-hover">www.recmotestudio.com</a> titularidad de RECMOTE STUDIO, S.L utiliza
+                cookies.<br><br>
+
+                Las cookies son ficheros que se descargan en su ordenador al acceder a determinadas páginas web. Las
+                cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre los
+                hábitos de navegación de un usuario o de su equipo y, dependiendo de la información que contengan y de
+                la forma en que utilice su equipo. Además, mejoran su proceso de navegación, ya que permiten que la
+                página web ofrezca al usuario información que puede ser de su interés en función del uso que realice,
+                del contenido de la misma.<br><br>
+
+                En caso de no querer recibir cookies, por favor, configure su navegador de internet, para que las borre
+                del disco duro de su ordenador, las bloquee o le avise en su caso de instalación de las mismas. Para
+                continuar sin cambios en la configuración de las cookies, simplemente, continúe en la página web.
+                <br><br>
+            </p>
+            <p class="info-item-title">2. Consentimiento<br><br></p>
+            <p class="info-item-text">
+                Las cookies que utilizamos no almacenan dato personal alguno, ni ningún tipo de información que pueda
+                identificarle, salvo que quieran registrarse de forma voluntaria con el fin de utilizar los servicios
+                que ponemos a su disposición o de recibir información sobre promociones y contenidos de su
+                interés.<br><br>
+
+                Al navegar y continuar en nuestra web nos indica que está consintiendo el uso de las cookies antes
+                enunciadas, y en las condiciones contenidas en la presente política de cookies. En caso de no estar de
+                acuerdo envíe un correo electrónico a <a href="www.recmotestudio.com" target="_blank"
+                    class="underlined-hover">www.recmotestudio.com</a>. <br><br>
+            </p>
+            <p class="info-item-title">3. Cómo bloquear o eliminar las cookies instaladas<br><br></p>
+            <p class="info-item-text">
+                Puede usted permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración
+                de las opciones de su navegador. Puede encontrar información sobre cómo hacerlo, en relación con los
+                navegadores más comunes en los links que se incluyen a continuación:<br><br>
+
+                Explorer: <a href="https://support.microsoft.com/es-es/kb/278835" target="_blank"
+                    class="underlined-hover">https://support.microsoft.com/es-es/kb/278835</a><br>
+                Chrome: <a href="http://support.google.com/chrome/bin/answer.py?hl=es&answer=95647" target="_blank"
+                    class="underlined-hover">http://support.google.com/chrome/bin/answer.py?hl=es&answer=95647</a><br>
+                Firefox: <a href="http://support.mozilla.org/es/kb/Borrar%20cookies" target="_blank"
+                    class="underlined-hover">http://support.mozilla.org/es/kb/Borrar%20cookies</a><br>
+                Safari: <a href="http://support.apple.com/kb/ph5042" target="_blank"
+                    class="underlined-hover">http://support.apple.com/kb/ph5042</a><br><br>
+
+                Le informamos, no obstante, de la posibilidad de que la desactivación de alguna cookie impida o
+                dificulte la navegación o la prestación de los servicios ofrecidos en la página web.<br><br>
+
+                4. <a href="www.recmotestudio.com" target="_blank" class="underlined-hover">www.recmotestudio.com</a>
+                titularidad de Recmote Studio S.L. puede modificar esta política de cookies en
+                función de las exigencias legales. O con la finalidad de adaptar dicha política a las instrucciones
+                dictadas por la Agencia Española de Protección de Datos.
+
+                Por esta razón, aconsejamos a los usuarios que la visiten periódicamente. Cuando se produzcan cambios
+                significativos en esta política de cookies, se comunicarán a los usuarios, bien mediante la web o a
+                través de correo electrónico a los usuarios registrados.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-head">
+            <div class="footer-head-left">
+                <img src="../assets/recmote-studio.svg" alt="recmote studio logo text">
+            </div>
+            <div class="footer-head-right">
+                <div class="footer-head-right-text">
+                    <a href="#top-of-page">
+                        Back to top
+                    </a>
+                </div>
+                <div class="footer-head-right-arrow">
+                    <a href="#top-of-page">
+                        <img src="../assets/arrow-up.svg" alt="arrow up text">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-body">
+            <div class="footer-body-left">
+                <div class="footer-body-left-row">
+                    <div class="footer-body-left-row-title">Explore</div>
+                    <ul class="footer-body-left-row-items">
+                        <li class="footer-body-left-row-item">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/about-us.html">About us</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/services.html">Services</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/our-work.html">Out work</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/get-in-touch.html">Get in touch</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-body-left-row">
+                    <div class="footer-body-left-row-title">Legal</div>
+                    <ul class="footer-body-left-row-items">
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/privacy.html">Privacy</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/legal.html">Legal</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/cookies.html">Cookies</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-body-left-row">
+                    <div class="footer-body-left-row-title">Language</div>
+                    <ul class="footer-body-left-row-items">
+                        <li class="footer-body-left-row-item">
+                            <a href="#" id="language1-footer" onclick="changeLanguage(this)">Español</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="#" id="language2-footer" onclick="changeLanguage(this)">Català</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-body-right">
+                <a href="mailto:hola@recmotestudio.com" class="underlined-hover">hola@recmotestudio.com</a>
+                <a href="tel:+34 (0) 696 003 156" class="underlined-hover">+34 (0) 696 003 156</a>
+                <a href="tel:+34 (0) 615 841 032" class="underlined-hover">+34 (0) 615 841 032</a>
+                <a href="https://maps.google.com/?q=41.383512, 2.141424" class="underlined-hover" target="_blank">C/
+                    Nicaragua 48, 1º 1ª,
+                    08024 Barcelona,
+                    Spain</a>
+
+            </div>
+        </div>
+        <div class="footer-media">
+            <a href="https://www.linkedin.com/feed/" target="_blank">
+                <img src="../assets/linkedin.svg" alt="linkedin logo">
+            </a>
+            <a href="https://vimeo.com/" target="_blank">
+                <img src="../assets/vimeo.svg" alt="vimeo logo">
+            </a>
+
+        </div>
+        <div class="footer-footer">
+            <div class="footer-footer-row">
+                <span>Made with</span>
+                <img src="../assets/heart.svg" alt="heart">
+                <span>in BCN</span>
+            </div>
+            <div class="footer-footer-row">
+                <span>© Copyright Recmote Studio S.L. 2020</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script src="../js/info.js"></script>
+</body>
+
+</html>

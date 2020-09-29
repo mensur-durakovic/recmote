@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Recmote" />
+    <meta property="og:title" content="Recmote - Audio Post Production" />
+    <meta property="og:description" content="Recmote - Audio Post Production" />
+    <meta property="og:image" content="./assets/logo.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://recmote.vercel.app/">
+    <title>Recmote - Audio Post Production</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.ico" />
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- sidedrawer menu -->
+    <section class="sidedrawer">
+        <div class="sidedrawer-backdrop" onclick="toggleSidedrawer()"></div>
+        <div class="sidedrawer-menu">
+            <div class="sidedrawer-menu-top">
+                <img src="../assets/close.svg" alt="close" onclick="toggleSidedrawer()">
+            </div>
+            <div class="sidedrawer-menu-body">
+                <ul class="sidedrawer-menu-body-items">
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text sidedrawer-menu-body-item-active" href="../index.html"
+                            id="sidedrawer-home" onclick="setActiveSidedrawerItem(this)">Home</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/about-us.html" id="sidedrawer-about-us"
+                            onclick="setActiveSidedrawerItem(this)">About
+                            us</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/services.html" id="sidedrawer-services"
+                            onclick="setActiveSidedrawerItem(this)">Services</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/our-work.html" id="sidedrawer-our-work"
+                            onclick="setActiveSidedrawerItem(this)">Our
+                            work</a>
+                    </li>
+                    <li class="sidedrawer-menu-body-item">
+                        <a class="sidedrawer-menu-body-item-text" href="../pages/get-in-touch.html"
+                            id="sidedrawer-get-in-touch" onclick="setActiveSidedrawerItem(this)">Get
+                            in touch</a>
+                    </li>
+                </ul>
+                <div class="sidedrawer-menu-body-language">
+                    <a class="sidedrawer-menu-body-language-item" href="#" id="language1"
+                        onclick="changeLanguage(this)">Español</a>
+                    <a class="sidedrawer-menu-body-language-item" href="#" id="language2"
+                        onclick="changeLanguage(this)">Català</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="header-left-logo-shape">
+                <a href="../index.html">
+                    <img src="../assets/logo.svg" alt="recmote logo">
+                </a>
+            </div>
+            <div class="header-left-logo-text">
+                <a href="../index.html">
+                    <img src="../assets/recmote.svg" alt="recmote text">
+                </a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-right-button">
+                <a class="get-in-touch" href="../pages/get-in-touch.html"> Get in touch </a>
+            </div>
+            <img src="../assets/hamburger.svg" alt="hamburger menu" onclick="toggleSidedrawer()">
+        </div>
+    </header>
+
+    <!-- privacy-policy section-->
+    <section class="info" id="top-of-page">
+
+        <h1 class="info-title">
+            Política de privacidad
+        </h1>
+
+        <div class="info-item">
+            <p class="info-item-title">1. RESPONSABLE</p>
+            <p class="info-item-text">
+                Identidad<br><br>
+
+                Empresa: RECMOTE STUDIO, S.L CIF: B67128660 Dir. Postal: VILA I VILÀ 73, sa2, 08004,
+                BARCELONA <br>
+                E-Mail: <a href="mailto:carolina.salvador@recmotestudio.com"
+                    class="underlined-hover">carolina.salvador@recmotestudio.com</a> <br><br>
+
+                Datos de contacto del delegado en protección de datos:<br>
+                No se dispone de Delegado.<br><br>
+            </p>
+            <p class="info-item-title">2. FINALIDADES</p>
+            <p class="info-item-text">
+                Descripción ampliada de la finalidad/es del tratamiento:<br>
+                Trataremos sus datos para la gestión administrativa, contable y fiscal.<br><br>
+            </p>
+            <p class="info-item-title">3. CONSERVACIÓN</p>
+            <p class="info-item-text">
+                Plazos o criterios de conservación de los datos:<br><br>
+                Los datos personales proporcionados se conservarán mientras se mantenga la relación con la
+                entidad y no se solicite su supresión por el interesado, serán conservados conforme a los
+                plazos legales establecidos en materia fiscal y contable, tomando como referencia la última
+                comunicación.<br><br>
+            </p>
+            <p class="info-item-title">4. DECISIONES</p>
+            <p class="info-item-text">
+                Decisiones automatizadas, perfiles y lógica aplicada:<br>
+                La empresa NO tomará decisiones automatizadas, perfiles ó lógica aplicada a sus datos.<br><br>
+            </p>
+            <p class="info-item-title">5. LEGITIMACIÓN</p>
+            <p class="info-item-text">
+                Legitimación por ejecución de un contrato:<br>
+                Debido a que el tratamiento es necesario para la ejecución de un contrato mercantil, en el que
+                usted es parte , se hace constar que el tipo de contrato de que se trata, es el citado contrato
+                mercantil o la relación precontractual.<br><br>
+                Como la comunicación de datos personales es un requisito legal o contractual y un requisito
+                necesario para suscribir el citado contrato, se informa al interesado que está obligado a
+                facilitar los datos personales, y así mismo que las consecuencias de no hacerlo pueden
+                suponer la no prestación del servicio solicitado.<br><br>
+            </p>
+            <p class="info-item-title">6. DESTINATARIOS</p>
+            <p class="info-item-text">
+                Durante el periodo de duración del tratamiento, RECMOTE STUDIO, S.L no realizará ninguna
+                cesión, salvo obligación legal, ni tampoco transferencia alguna.<br><br>
+            </p>
+            <p class="info-item-title">7. DERECHOS</p>
+            <p class="info-item-text">
+                El interesado puede ejercer los siguientes derechos:<br><br>
+
+                • Derecho a solicitar el acceso a sus datos personales.<br>
+                • Derecho a solicitar su rectificación o supresión.<br>
+                • Derecho a solicitar la limitación de su tratamiento.<br>
+                • Derecho a oponerse al tratamiento.<br>
+                • Derecho a la portabilidad de los datos.<br>
+                • Derecho a retirar el consentimiento prestado.<br><br>
+
+                Cualquier persona tiene derecho a obtener confirmación sobre si en la Entidad estamos
+                tratando datos personales que les conciernan, o no. Las personas interesadas tienen derecho a
+                acceder a sus datos personales, así como a solicitar la rectificación de los datos inexactos o, en
+                su caso, solicitar su supresión cuando, entre otros motivos, los datos ya no sean necesarios
+                para los fines que fueron recogidos.<br><br>
+
+                En determinadas circunstancias, los interesados podrán solicitar la limitación del tratamiento
+                de sus datos, en cuyo caso únicamente los conservaremos para el ejercicio o la defensa de
+                reclamaciones. En determinadas circunstancias y por motivos relacionados con su situación
+                particular, los interesados podrán oponerse al tratamiento de sus datos. En este caso, la
+                entidad, dejará de tratar los datos, salvo por motivos legítimos imperiosos, o el ejercicio o la
+                defensa de posibles reclamaciones.<br><br>
+
+                Si ha otorgado su consentimiento para alguna finalidad concreta, tiene derecho a retirar el
+                consentimiento otorgado en cualquier momento, sin que ello afecte a la licitud del
+                tratamiento basado en el consentimiento previo a su retirada.
+                Para ello podrá emplear los formularios habilitados por la empresa, o bien dirigir un escrito a
+                RECMOTE STUDIO, S.L - VILA I VILÀ 73, sa2, 08004, BARCELONA también puede enviar un
+                email a: <a href="mailto:carolina.salvador@recmotestudio.com"
+                    class="underlined-hover">carolina.salvador@recmotestudio.com</a> <br><br>
+
+                En caso de que sienta vulnerados sus derechos en lo concerniente a la protección de sus datos
+                personales, especialmente cuando no haya obtenido satisfacción en el ejercicio de sus
+                derechos, puede presentar una reclamación ante la Autoridad de Control en materia de
+                Protección de Datos competente a través de su sitio web: <a href="www.agpd.es" target="_blank"
+                    class="underlined-hover">www.agpd.es</a>.<br><br>
+
+                En cumplimiento de lo prevenido en el artículo 21 de la Ley 34/2002 de servicios de la sociedad
+                de la información y comercio electrónico, si usted no desea recibir más información sobre
+                nuestros servicios, puede darse de baja en la siguiente dirección de correo electrónico de la
+                entidad, indicando en el asunto "No enviar correos".<br><br>
+
+            </p>
+            <p class="info-item-title">PROCEDENCIA DE LOS DATOS</p>
+            <p class="info-item-text">
+                Los datos personales que tratamos en RECMOTE STUDIO, S.L proceden directamente de usted:<br><br>
+
+                Las categorías de datos que se tratan son:<br><br>
+
+                • Datos de identificación<br>
+                • Características Personales.<br>
+                • Códigos o claves de identificación<br>
+                • Detalles de empleo<br>
+                • Direcciones postales o electrónicas<br>
+                • Información comercial<br>
+                • Datos económicos – Financieros<br>
+                • Transacciones.<br><br>
+
+                No se tratan datos especialmente protegidos.
+            </p>
+        </div>
+
+
+    </section>
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-head">
+            <div class="footer-head-left">
+                <img src="../assets/recmote-studio.svg" alt="recmote studio logo text">
+            </div>
+            <div class="footer-head-right">
+                <div class="footer-head-right-text">
+                    <a href="#top-of-page">
+                        Back to top
+                    </a>
+                </div>
+                <div class="footer-head-right-arrow">
+                    <a href="#top-of-page">
+                        <img src="../assets/arrow-up.svg" alt="arrow up text">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-body">
+            <div class="footer-body-left">
+                <div class="footer-body-left-row">
+                    <div class="footer-body-left-row-title">Explore</div>
+                    <ul class="footer-body-left-row-items">
+                        <li class="footer-body-left-row-item">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/about-us.html">About us</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/services.html">Services</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/our-work.html">Out work</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/get-in-touch.html">Get in touch</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-body-left-row">
+                    <div class="footer-body-left-row-title">Legal</div>
+                    <ul class="footer-body-left-row-items">
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/privacy.html">Privacy</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/legal.html">Legal</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="../pages/cookies.html">Cookies</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-body-left-row">
+                    <div class="footer-body-left-row-title">Language</div>
+                    <ul class="footer-body-left-row-items">
+                        <li class="footer-body-left-row-item">
+                            <a href="#" id="language1-footer" onclick="changeLanguage(this)">Español</a>
+                        </li>
+                        <li class="footer-body-left-row-item">
+                            <a href="#" id="language2-footer" onclick="changeLanguage(this)">Català</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-body-right">
+                <a href="mailto:hola@recmotestudio.com" class="underlined-hover">hola@recmotestudio.com</a>
+                <a href="tel:+34 (0) 696 003 156" class="underlined-hover">+34 (0) 696 003 156</a>
+                <a href="tel:+34 (0) 615 841 032" class="underlined-hover">+34 (0) 615 841 032</a>
+                <a href="https://maps.google.com/?q=41.383512, 2.141424" class="underlined-hover" target="_blank">C/
+                    Nicaragua 48, 1º 1ª,
+                    08024 Barcelona,
+                    Spain</a>
+
+            </div>
+        </div>
+        <div class="footer-media">
+            <a href="https://www.linkedin.com/feed/" target="_blank">
+                <img src="../assets/linkedin.svg" alt="linkedin logo">
+            </a>
+            <a href="https://vimeo.com/" target="_blank">
+                <img src="../assets/vimeo.svg" alt="vimeo logo">
+            </a>
+
+        </div>
+        <div class="footer-footer">
+            <div class="footer-footer-row">
+                <span>Made with</span>
+                <img src="../assets/heart.svg" alt="heart">
+                <span>in BCN</span>
+            </div>
+            <div class="footer-footer-row">
+                <span>© Copyright Recmote Studio S.L. 2020</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Javascript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <script src="../js/info.js"></script>
+</body>
+
+</html>
