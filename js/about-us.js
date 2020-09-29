@@ -1,24 +1,36 @@
 let sidedrawerOpen = false;
 let activeSidedrawerItem = "about-us";
+const spanish = "Español";
+const catalan = "Català";
+const english = "English";
 
-const variant0 = `<a href="mailto:hola@recmotestudio.com" class="underlined-hover"> 
-<div class="about-us-team-row-item-hover about-us-team-row-item-hover-variant0">
-    <img src="../assets/envelope-black.svg" alt="black envelope">
-    <span class="about-us-team-row-item-hover-title">carolina salvador</span>
-    <span class="about-us-team-row-item-hover-description">Manager director</span>
-</div></a>`;
-const variant1 = `<a href="mailto:hola@recmotestudio.com" class="underlined-hover"> 
-<div class="about-us-team-row-item-hover about-us-team-row-item-hover-variant1">
-    <img src="../assets/envelope-white.svg" alt="white envelope">
-    <span class="about-us-team-row-item-hover-title">carolina salvador</span>
-    <span class="about-us-team-row-item-hover-description">Manager director</span>
-</div></a>`;
-const variant2 = `<a href="mailto:hola@recmotestudio.com" class="underlined-hover"> 
-<div class="about-us-team-row-item-hover about-us-team-row-item-hover-variant2">
-    <img src="../assets/envelope-red.svg" alt="red envelope">
-    <span class="about-us-team-row-item-hover-title">carolina salvador</span>
-    <span class="about-us-team-row-item-hover-description">Manager director</span>
-</div></a>`;
+function changeLanguage(element) {
+  if (element.id === "language1" || element.id === "language1-footer") {
+    if (element.text === spanish) {
+      $("#language1").text(english);
+      $("#language1-footer").text(english);
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+    } else if (element.text === english) {
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+    }
+  } else if (element.id === "language2" || element.id === "language2-footer") {
+    if (element.text === catalan) {
+      $("#language2").text(english);
+      $("#language2-footer").text(english);
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+    } else if (element.text === english) {
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+    }
+  }
+}
 
 function toggleSidedrawer() {
   if (!sidedrawerOpen) {
@@ -38,6 +50,17 @@ function setActiveSidedrawerItem(newActiveSidedrawerItem) {
   $(newActiveSidedrawerItem).addClass("sidedrawer-menu-body-item-active");
 }
 
+function isMobile() {
+  const result = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+  if (result) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -46,25 +69,45 @@ function hoverIn() {
   if ($(this).data("item-type") !== "hover") {
     return;
   }
-
-  const randomNumber = getRandomInt(3); // 0,1,2
-  const className = `.about-us-team-row-item-hover-variant${randomNumber}`;
-  const result = $(this).find(className);
-  result
-    .removeClass(
-      "about-us-team-row-item-hover-not-visible animate__animated animate__slideOutLeft animate__fast"
-    )
-    .addClass(
-      "about-us-team-row-item-hover-visible animate__animated animate__slideInLeft animate__fast"
-    );
+  if (!isMobile()) {
+    const randomNumber = getRandomInt(3); // 0,1,2
+    const className = `.about-us-team-row-item-hover-variant${randomNumber}`;
+    const result = $(this).find(className);
+    result
+      .removeClass(
+        "about-us-team-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
+      )
+      .addClass(
+        "about-us-team-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
+      );
+  }
 }
 function hoverOut() {
   if ($(this).data("item-type") !== "hover") {
     return;
   }
-  const result = $(this).find(".about-us-team-row-item-hover-visible");
+  if (!isMobile()) {
+    const result = $(this).find(".about-us-team-row-item-hover");
+    $(result).addClass("animate__animated animate__fadeOut animate__fast");
+  }
+}
 
-  $(result).addClass("animate__animated animate__slideOutLeft animate__fast");
+function itemClicked() {
+  if (isMobile()) {
+    $(".about-us-team-row-item-hover")
+      .addClass("animate__animated animate__fadeOut animate__fast")
+      .addClass("about-us-team-row-item-hover-not-visible");
+    const randomNumber = getRandomInt(3); // 0,1,2
+    const className = `.about-us-team-row-item-hover-variant${randomNumber}`;
+    const result = $(this).find(className);
+    result
+      .removeClass(
+        "about-us-team-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
+      )
+      .addClass(
+        "about-us-team-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
+      );
+  }
 }
 
 $(function () {
@@ -74,4 +117,5 @@ $(function () {
   $("#sidedrawer-about-us").addClass("sidedrawer-menu-body-item-active");
   //event for hover cards
   $(".about-us-team-row-item").hover(hoverIn, hoverOut);
+  $(".about-us-team-row-item").click(itemClicked);
 });

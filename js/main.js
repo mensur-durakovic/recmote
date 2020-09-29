@@ -1,14 +1,6 @@
 let sidedrawerOpen = false;
 let activeSidedrawerItem = "home";
 let myPlayer;
-const videoModal = `<div id="test-popup" class="player mfp-hide">
-<video id="example_video_1" class="video-js vjs-default-skin vjs-nofull vjs-nopicinpic vjs-volume-last" controls
-    disablePictureInPicture preload="auto" style="height:50vh; width:100%" data-setup="{}">
-    <source src="./assets/Durex_sound.mp4" type='video/mp4' />
-    <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser
-        that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-</video>
-</div>`;
 const spanish = "Español";
 const catalan = "Català";
 const english = "English";
@@ -80,7 +72,6 @@ function isMobile() {
   const result = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
   );
-  console.log("result", result);
   if (result) {
     return true;
   } else {
@@ -115,7 +106,6 @@ function hoverOut() {
 }
 
 function itemClicked() {
-  console.log("itemClicked");
   if (isMobile()) {
     $(".featured-work-commercials-row-item-hover")
       .addClass("animate__animated animate__fadeOut animate__fast")
@@ -136,9 +126,6 @@ function itemClicked() {
 }
 
 function hoverElementClicked() {
-  console.log("hoverElementClicked");
-  /* $(".test-popup").show();
-    myPlayer.play(); */
   myPlayer = videojs("example_video_1");
   $.magnificPopup.open({
     items: {

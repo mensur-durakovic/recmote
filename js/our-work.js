@@ -1,27 +1,37 @@
 let sidedrawerOpen = false;
 let activeSidedrawerItem = "our-work";
+const spanish = "Español";
+const catalan = "Català";
+const english = "English";
+let myPlayer;
 
-const variant0 = `<a href="#video-modal" rel="modal:open">
-<div class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant0">
-<img src="../assets/play-black.svg" alt="play arrow">
-<span class="featured-work-commercials-row-item-hover-title">oxfam intermon</span>
-<span class="featured-work-commercials-row-item-hover-description">Ayuda inmediata</span>
-</div>
-</a>`;
-const variant1 = `<a href="#video-modal" rel="modal:open">
-<div class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant1">
-<img src="../assets/play-white.svg" alt="play arrow">
-<span class="featured-work-commercials-row-item-hover-title">optrex</span>
-<span class="featured-work-commercials-row-item-hover-description">Tinniest footprint</span>
-</div>
-</a>`;
-const variant2 = `<a href="#video-modal" rel="modal:open">
-<div class="featured-work-commercials-row-item-hover featured-work-commercials-row-item-hover-variant2">
-<img src="../assets/play-red.svg" alt="play arrow">
-<span class="featured-work-commercials-row-item-hover-title">skoda fabia</span>
-<span class="featured-work-commercials-row-item-hover-description">Drive like crazy</span>
-</div>
-</a>`;
+function changeLanguage(element) {
+  if (element.id === "language1" || element.id === "language1-footer") {
+    if (element.text === spanish) {
+      $("#language1").text(english);
+      $("#language1-footer").text(english);
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+    } else if (element.text === english) {
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+    }
+  } else if (element.id === "language2" || element.id === "language2-footer") {
+    if (element.text === catalan) {
+      $("#language2").text(english);
+      $("#language2-footer").text(english);
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+    } else if (element.text === english) {
+      $("#language2").text(catalan);
+      $("#language2-footer").text(catalan);
+      $("#language1").text(spanish);
+      $("#language1-footer").text(spanish);
+    }
+  }
+}
 
 function toggleSidedrawer() {
   if (!sidedrawerOpen) {
@@ -41,35 +51,87 @@ function setActiveSidedrawerItem(newActiveSidedrawerItem) {
   $(newActiveSidedrawerItem).addClass("sidedrawer-menu-body-item-active");
 }
 
+function isMobile() {
+  const result = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+  if (result) {
+    return true;
+  } else {
+    return false;
+  }
+}
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 function hoverIn() {
-  const randomNumber = getRandomInt(3); // 0,1,2
-  const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
-  const result = $(this).find(className);
-  result
-    .removeClass(
-      "featured-work-commercials-row-item-hover-not-visible animate__animated animate__slideOutLeft animate__fast"
-    )
-    .delay(1000)
-    .addClass(
-      "featured-work-commercials-row-item-hover-visible animate__animated animate__slideInLeft animate__fast"
-    );
+  if (!isMobile()) {
+    const randomNumber = getRandomInt(3); // 0,1,2
+    const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
+    const result = $(this).find(className);
+    result
+      .removeClass(
+        "featured-work-commercials-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
+      )
+      .addClass(
+        "featured-work-commercials-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
+      )
+      .click(hoverElementClicked);
+  }
 }
-function hoverOut(e) {
-  e.stopPropagation();
-  const result = $(this).find(".featured-work-commercials-row-item-hover");
-
-  $(result).addClass("animate__animated animate__slideOutLeft animate__fast");
-}
-
-function playVideo() {
-  $("#video-modal").modal("show");
+function hoverOut() {
+  if (!isMobile()) {
+    const result = $(this).find(".featured-work-commercials-row-item-hover");
+    $(result).addClass("animate__animated animate__fadeOut animate__fast");
+  }
 }
 
-$(function () {
+function itemClicked() {
+  if (isMobile()) {
+    $(".featured-work-commercials-row-item-hover")
+      .addClass("animate__animated animate__fadeOut animate__fast")
+      .addClass("featured-work-commercials-row-item-hover-not-visible");
+    const randomNumber = getRandomInt(3); // 0,1,2
+    const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
+    const result = $(this).find(className);
+    result
+      .removeClass(
+        "featured-work-commercials-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
+      )
+      .delay(1000)
+      .addClass(
+        "featured-work-commercials-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
+      );
+    $(".featured-work-commercials-row-item-hover").click(hoverElementClicked);
+  }
+}
+
+function hoverElementClicked() {
+  myPlayer = videojs("example_video_1");
+  $.magnificPopup.open({
+    items: {
+      src: "#test-popup",
+      midClick: true,
+      type: "inline",
+    },
+    callbacks: {
+      open: function () {
+        $.magnificPopup.instance.close = function () {
+          // Do whatever else you need to do here
+          myPlayer.currentTime(0);
+          myPlayer.pause();
+
+          // Call the original close method to close the popup
+          $.magnificPopup.proto.close.call(this);
+        };
+      },
+    },
+  });
+  myPlayer.play();
+}
+
+$("document").ready(function () {
   //set active item for sidedrawer
   $(".sidedrawer-menu-body-item-text").removeClass(
     "sidedrawer-menu-body-item-active"
@@ -78,4 +140,5 @@ $(function () {
 
   //event for hover cards
   $(".featured-work-commercials-row-item").hover(hoverIn, hoverOut);
+  $(".featured-work-commercials-row-item").click(itemClicked);
 });

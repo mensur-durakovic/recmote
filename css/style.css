@@ -788,7 +788,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 25px;
+  padding: 24px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-orient: vertical;
@@ -816,6 +816,12 @@ a {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .featured-work-commercials-row-item-hover {
+    padding: 40px;
+  }
+}
+
 .featured-work-commercials-row-item-hover img {
   width: 20px;
   min-width: 20px;
@@ -838,12 +844,6 @@ a {
   }
 }
 
-@media (min-width: 768px) {
-  .featured-work-commercials-row-item-hover {
-    padding: 40px;
-  }
-}
-
 .featured-work-commercials-row-item-hover-title {
   font-family: "Bebas Neue", cursive;
   font-style: normal;
@@ -855,8 +855,8 @@ a {
 
 @media (min-width: 768px) {
   .featured-work-commercials-row-item-hover-title {
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 40px;
+    line-height: 48px;
   }
 }
 
@@ -869,8 +869,8 @@ a {
 
 @media (min-width: 768px) {
   .featured-work-commercials-row-item-hover-description {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 
@@ -946,6 +946,20 @@ a {
           justify-content: space-between;
 }
 
+.footer-head-left {
+  min-height: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .footer-head-left img {
   width: 110px;
   min-width: 110px;
@@ -957,9 +971,9 @@ a {
 
 @media (min-width: 768px) {
   .footer-head-left img {
-    width: 149px;
-    min-width: 149px;
-    max-width: 149px;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
     height: 18px;
     min-height: 18px;
     max-height: 18px;
@@ -981,9 +995,16 @@ a {
 .footer-head-right-text a {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 12px;
+  line-height: 15px;
   color: #fafafa;
+}
+
+@media (min-width: 768px) {
+  .footer-head-right-text a {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }
 
 .footer-head-right-arrow {
@@ -1000,7 +1021,7 @@ a {
 }
 
 .footer-divider {
-  margin-top: 8px;
+  margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -1143,7 +1164,6 @@ a {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 12px;
-  line-height: 20px;
 }
 
 @media (min-width: 1025px) {
@@ -1165,8 +1185,8 @@ a {
 .footer-body-left-row-item a {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 12px;
+  line-height: 15px;
   color: #fafafa;
 }
 
@@ -1332,13 +1352,11 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 8px;
   padding: 0 24px 24px 24px;
 }
 
 @media (min-width: 768px) {
   .about-us-title {
-    margin-top: 54px;
     padding: 0 140px 100px 140px;
   }
 }
@@ -1352,8 +1370,8 @@ a {
 
 @media (min-width: 768px) {
   .about-us-title-text {
-    font-size: 70px;
-    line-height: 84px;
+    font-size: 60px;
+    line-height: 72px;
   }
 }
 
@@ -1365,8 +1383,8 @@ a {
 
 @media (min-width: 768px) {
   .about-us-title-description {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 
@@ -1534,10 +1552,9 @@ a {
 }
 
 .about-us-team-row-item-hover {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
   width: 100%;
   height: 100%;
   padding: 25px;
@@ -1607,8 +1624,8 @@ a {
 
 @media (min-width: 768px) {
   .about-us-team-row-item-hover-title {
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 40px;
+    line-height: 48px;
   }
 }
 
@@ -1621,8 +1638,8 @@ a {
 
 @media (min-width: 768px) {
   .about-us-team-row-item-hover-description {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 
@@ -1705,21 +1722,8 @@ a {
 
 @media (min-width: 768px) {
   .services-title-text {
-    font-size: 70px;
-    line-height: 84px;
-  }
-}
-
-.services-title-description {
-  font-size: 16px;
-  line-height: 20px;
-  max-width: 1160px;
-}
-
-@media (min-width: 768px) {
-  .services-title-description {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 60px;
+    line-height: 72px;
   }
 }
 
@@ -1834,8 +1838,8 @@ a {
 
 @media (min-width: 1025px) {
   .services-grid-row-item-title {
-    font-size: 32px;
-    line-height: 39px;
+    font-size: 24px;
+    line-height: 29px;
     min-height: 76px;
     max-width: 296px;
   }
@@ -2089,21 +2093,8 @@ a {
 
 @media (min-width: 768px) {
   .our-work-title-text {
-    font-size: 70px;
-    line-height: 84px;
-  }
-}
-
-.our-work-title-description {
-  font-size: 16px;
-  line-height: 20px;
-  max-width: 1160px;
-}
-
-@media (min-width: 768px) {
-  .our-work-title-description {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 60px;
+    line-height: 72px;
   }
 }
 
@@ -2170,8 +2161,8 @@ a {
 
 @media (min-width: 768px) {
   .contact-title-text {
-    font-size: 70px;
-    line-height: 84px;
+    font-size: 60px;
+    line-height: 72px;
   }
 }
 
@@ -2184,8 +2175,8 @@ a {
 
 @media (min-width: 768px) {
   .contact-title-description {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
     margin: 24px 0 50px 0;
   }
 }
@@ -2343,8 +2334,8 @@ a {
 
 @media (min-width: 768px) {
   .contact-infos-item-text a {
-    font-size: 32px;
-    line-height: 42px;
+    font-size: 24px;
+    line-height: 29px;
     max-width: 430px;
   }
 }
@@ -2418,8 +2409,8 @@ a {
 
 .contact-form > form label {
   color: #999;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
@@ -2434,8 +2425,8 @@ a {
 .contact-form > form input:valid ~ label {
   top: -20px;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 17px;
   color: #aeaeae;
 }
 
@@ -2691,17 +2682,18 @@ a {
 
 .contact-thanks-title {
   font-weight: 600;
-  font-size: 54px;
-  line-height: 66px;
+  font-size: 42px;
+  line-height: 51px;
   color: #21212b;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  max-width: 440px;
 }
 
 .contact-thanks-text {
-  font-size: 32px;
-  line-height: 39px;
+  font-size: 24px;
+  line-height: 29px;
   color: #21212b;
-  max-width: 500px;
+  max-width: 440px;
 }
 
 /* animations */

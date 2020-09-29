@@ -14,7 +14,6 @@
     <link rel="icon" type="image/png" href="../assets/favicon.ico" />
 
     <!-- CSS -->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -55,8 +54,10 @@
                     </li>
                 </ul>
                 <div class="sidedrawer-menu-body-language">
-                    <a class="sidedrawer-menu-body-language-item" href="#">Español</a>
-                    <a class="sidedrawer-menu-body-language-item" href="#">Català</a>
+                    <a class="sidedrawer-menu-body-language-item" href="#" id="language1"
+                        onclick="changeLanguage(this)">Español</a>
+                    <a class="sidedrawer-menu-body-language-item" href="#" id="language2"
+                        onclick="changeLanguage(this)">Català</a>
                 </div>
             </div>
         </div>
@@ -272,18 +273,18 @@
                     <div class="footer-body-left-row-title">Language</div>
                     <ul class="footer-body-left-row-items">
                         <li class="footer-body-left-row-item">
-                            <a href="#">Español</a>
+                            <a href="#" id="language1-footer" onclick="changeLanguage(this)">Español</a>
                         </li>
                         <li class="footer-body-left-row-item">
-                            <a href="#">Català</a>
+                            <a href="#" id="language2-footer" onclick="changeLanguage(this)">Català</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-body-right">
                 <a href="mailto:hola@recmotestudio.com" class="underlined-hover">hola@recmotestudio.com</a>
-                <a href="tel:+34 (0) 696 003 156">+34 (0) 696 003 156</a>
-                <a href="tel:+34 (0) 615 841 032">+34 (0) 615 841 032</a>
+                <a href="tel:+34 (0) 696 003 156" class="underlined-hover">+34 (0) 696 003 156</a>
+                <a href="tel:+34 (0) 615 841 032" class="underlined-hover">+34 (0) 615 841 032</a>
                 <a href="https://maps.google.com/?q=41.383512, 2.141424" class="underlined-hover" target="_blank">C/
                     Nicaragua 48, 1º 1ª,
                     08024 Barcelona,
