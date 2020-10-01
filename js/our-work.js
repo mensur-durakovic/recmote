@@ -32,12 +32,14 @@ function changeLanguage(element) {
     }
   }
 }
-
 function toggleSidedrawer() {
+  console.log("toggleSidedrawer");
   if (!sidedrawerOpen) {
     $(".sidedrawer").addClass("sidedrawer-active");
+    $(".hamburger--spin").addClass("is-active");
     sidedrawerOpen = true;
   } else {
+    $(".hamburger--spin").removeClass("is-active");
     $(".sidedrawer").removeClass("sidedrawer-active");
     sidedrawerOpen = false;
   }
@@ -71,39 +73,48 @@ function hoverIn() {
     const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
     const result = $(this).find(className);
     result
-      .removeClass(
-        "featured-work-commercials-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
-      )
-      .addClass(
-        "featured-work-commercials-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
-      )
+      .removeClass("featured-work-commercials-row-item-hover-not-visible")
+      .addClass("featured-work-commercials-row-item-hover-visible")
       .click(hoverElementClicked);
   }
 }
 function hoverOut() {
   if (!isMobile()) {
-    const result = $(this).find(".featured-work-commercials-row-item-hover");
-    $(result).addClass("animate__animated animate__fadeOut animate__fast");
+    $(this)
+      .find(".featured-work-commercials-row-item-hover")
+      .removeClass("featured-work-commercials-row-item-hover-visible")
+      .addClass("featured-work-commercials-row-item-hover-not-visible");
   }
 }
 
 function itemClicked() {
   if (isMobile()) {
-    $(".featured-work-commercials-row-item-hover")
-      .addClass("animate__animated animate__fadeOut animate__fast")
-      .addClass("featured-work-commercials-row-item-hover-not-visible");
+    $(".featured-work-commercials-row-item-hover").addClass(
+      "featured-work-commercials-row-item-hover-not-visible"
+    );
     const randomNumber = getRandomInt(3); // 0,1,2
     const className = `.featured-work-commercials-row-item-hover-variant${randomNumber}`;
     const result = $(this).find(className);
     result
-      .removeClass(
-        "featured-work-commercials-row-item-hover-not-visible animate__animated animate__fadeOut animate__fast"
-      )
+      .removeClass("featured-work-commercials-row-item-hover-not-visible")
       .delay(1000)
-      .addClass(
-        "featured-work-commercials-row-item-hover-visible animate__animated animate__fadeIn animate__fast"
-      );
+      .addClass("featured-work-commercials-row-item-hover-visible");
     $(".featured-work-commercials-row-item-hover").click(hoverElementClicked);
+
+    const videoTitle = $(this)
+      .find(className)
+      .find(".featured-work-commercials-row-item-hover-title")
+      .text();
+    const videoDesc = $(this)
+      .find(className)
+      .find(".featured-work-commercials-row-item-hover-description")
+      .text();
+
+    console.log("videoTitle", videoTitle);
+    console.log("videoDesc", videoDesc);
+
+    $(".video-recmote-info-title").text(videoTitle);
+    $(".video-recmote-info-text").text(videoDesc);
   }
 }
 

@@ -31,10 +31,13 @@ function changeLanguage(element) {
   }
 }
 function toggleSidedrawer() {
+  console.log("toggleSidedrawer");
   if (!sidedrawerOpen) {
     $(".sidedrawer").addClass("sidedrawer-active");
+    $(".hamburger--spin").addClass("is-active");
     sidedrawerOpen = true;
   } else {
+    $(".hamburger--spin").removeClass("is-active");
     $(".sidedrawer").removeClass("sidedrawer-active");
     sidedrawerOpen = false;
   }

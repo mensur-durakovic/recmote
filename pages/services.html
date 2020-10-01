@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/hamburgers.css" />
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -25,9 +27,6 @@
     <section class="sidedrawer">
         <div class="sidedrawer-backdrop" onclick="toggleSidedrawer()"></div>
         <div class="sidedrawer-menu">
-            <div class="sidedrawer-menu-top">
-                <img src="../assets/close.svg" alt="close" onclick="toggleSidedrawer()">
-            </div>
             <div class="sidedrawer-menu-body">
                 <ul class="sidedrawer-menu-body-items">
                     <li class="sidedrawer-menu-body-item">
@@ -64,28 +63,40 @@
         </div>
     </section>
 
+    <!-- header and floating button -->
+    <header class="header header-black ">
+        <div class="header-left">
+            <div class="header-left-logo-shape">
+                <a href="../index.html">
+                    <img src="../assets/logo.svg" alt="recmote logo">
+                </a>
+            </div>
+            <div class="header-left-logo-text">
+                <a href="../index.html">
+                    <img src="../assets/recmote.svg" alt="recmote text">
+                </a>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-right-button">
+                <a class="get-in-touch" href="../pages/get-in-touch.html"> Get in touch </a>
+            </div>
+
+
+            <!--  <img src="../assets/hamburger.svg" alt="hamburger menu" onclick="toggleSidedrawer()"> -->
+        </div>
+    </header>
+    <div class="header-right-hamburger-wrapper">
+        <button class="hamburger hamburger--spin" type="button" onclick="toggleSidedrawer()">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+
     <!-- services section-->
     <section class="services" id="top-of-page">
-        <header class="header">
-            <div class="header-left">
-                <div class="header-left-logo-shape">
-                    <a href="../index.html">
-                        <img src="../assets/logo.svg" alt="recmote logo">
-                    </a>
-                </div>
-                <div class="header-left-logo-text">
-                    <a href="../index.html">
-                        <img src="../assets/recmote.svg" alt="recmote text">
-                    </a>
-                </div>
-            </div>
-            <div class="header-right">
-                <div class="header-right-button">
-                    <a class="get-in-touch" href="../pages/get-in-touch.html"> Get in touch </a>
-                </div>
-                <img src="../assets/hamburger.svg" alt="hamburger menu" onclick="toggleSidedrawer()">
-            </div>
-        </header>
+
         <div class="services-title">
             <h1 class="services-title-text"> Services </h1>
         </div>
@@ -93,37 +104,37 @@
         <div class="services-grid">
             <div class="services-grid-row">
                 <div class="services-grid-row-item">
-                    <img src="../assets/sound.svg" alt="sound">
+                    <img class="services-grid-row-item-sound" src="../assets/sound.svg" alt="sound">
                     <div class="services-grid-row-item-title">Sound design</div>
                 </div>
                 <div class="services-grid-row-item">
-                    <img src="../assets/people.svg" alt="people">
+                    <img class="services-grid-row-item-people" src="../assets/people.svg" alt="people">
                     <div class="services-grid-row-item-title">Voice-over casting</div>
                 </div>
                 <div class="services-grid-row-item">
-                    <img src="../assets/mic.svg" alt="mic">
+                    <img class="services-grid-row-item-mic" src="../assets/mic.svg" alt="mic">
                     <div class="services-grid-row-item-title">Voice-over & ADR recording</div>
                 </div>
                 <div class="services-grid-row-item">
-                    <img src="../assets/planet.svg" alt="planet">
+                    <img class="services-grid-row-item-planet" src="../assets/planet.svg" alt="planet">
                     <div class="services-grid-row-item-title">Re-versioning & localization</div>
                 </div>
             </div>
             <div class="services-grid-row">
                 <div class="services-grid-row-item">
-                    <img src="../assets/megaphone.svg" alt="megaphone">
+                    <img class="services-grid-row-item-megaphone" src="../assets/megaphone.svg" alt="megaphone">
                     <div class="services-grid-row-item-title">Worldwide sound studio sourcing</div>
                 </div>
                 <div class="services-grid-row-item">
-                    <img src="../assets/wifi.svg" alt="wifi">
+                    <img class="services-grid-row-item-wifi" src="../assets/wifi.svg" alt="wifi">
                     <div class="services-grid-row-item-title">Source-Connect & SessionLinkPRO</div>
                 </div>
                 <div class="services-grid-row-item">
-                    <img src="../assets/note.svg" alt="note">
+                    <img class="services-grid-row-item-note" src="../assets/note.svg" alt="note">
                     <div class="services-grid-row-item-title">Music library & Ad-Hoc</div>
                 </div>
                 <div class="services-grid-row-item">
-                    <img src="../assets/DCP.svg" alt="DCP">
+                    <img class="services-grid-row-item-dcp" src="../assets/DCP.svg" alt="DCP">
                     <div class="services-grid-row-item-title">Digital Cinema Mastering</div>
                 </div>
             </div>
@@ -145,18 +156,19 @@
                 <div class="services-carousel-image"><img src="../assets/carousel-12.png" alt="studio image"></div>
             </div>
             <div class="services-carousel-overlay">
-                <div class="services-carousel-overlay-arrows">
-                    <div class="services-carousel-overlay-arrows-prev">
-                        <img src="../assets/arrow-prev.svg" alt="arrow previous image">
-                    </div>
-                    <div class="services-carousel-overlay-arrows-next">
-                        <img src="../assets/arrow-next.svg" alt="arrow next image">
-                    </div>
+                <div class="services-carousel-overlay-arrows-prev">
+                    <img src="../assets/arrow-prev.svg" alt="arrow previous image">
                 </div>
                 <div class="services-carousel-overlay-dots"></div>
+                <div class="services-carousel-overlay-arrows-next">
+                    <img src="../assets/arrow-next.svg" alt="arrow next image">
+                </div>
+
             </div>
 
         </div>
+
+        <div class="services-divider"></div>
 
         <div class="services-cta">
             <a class="get-in-touch"> Get in touch </a>
@@ -266,10 +278,8 @@
 
 
     <!-- Javascript -->
-    <!-- jQuery first -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="../js/services.js"></script>
 </body>

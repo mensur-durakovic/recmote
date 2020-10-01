@@ -7,6 +7,13 @@ const spanish = "Español";
 const catalan = "Català";
 const english = "English";
 
+function isValidEmailAddress(emailAddress) {
+  var pattern = new RegExp(
+    /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+  );
+  return pattern.test(emailAddress);
+}
+
 function changeLanguage(element) {
   if (element.id === "language1" || element.id === "language1-footer") {
     if (element.text === spanish) {
@@ -35,10 +42,13 @@ function changeLanguage(element) {
   }
 }
 function toggleSidedrawer() {
+  console.log("toggleSidedrawer");
   if (!sidedrawerOpen) {
     $(".sidedrawer").addClass("sidedrawer-active");
+    $(".hamburger--spin").addClass("is-active");
     sidedrawerOpen = true;
   } else {
+    $(".hamburger--spin").removeClass("is-active");
     $(".sidedrawer").removeClass("sidedrawer-active");
     sidedrawerOpen = false;
   }
@@ -65,6 +75,7 @@ function inputNameChanged(val) {
   enableButton();
 }
 function inputEmailChanged(val) {
+  $(".contact-form-validation").removeClass("contact-form-validation-visible");
   inputEmailValid = val.length >= 3;
   enableButton();
 }
@@ -74,7 +85,15 @@ function inputMessageChanged(val) {
 }
 
 function submitForm() {
+  const contactEmail = $("#contact-form-email").val();
+  if (!isValidEmailAddress(contactEmail)) {
+    $("#contact-form-button").prop("disabled", true);
+    $(".contact-form-validation").addClass("contact-form-validation-visible");
+    return;
+  }
+
   $(".contact-form-submit").hide(200);
+
   const contactName = $("#contact-form-name").val();
   $(".contact-thanks-title").text(`Thank you ${contactName}!`);
   $(".contact-form-load").addClass("contact-form-load-visible");
