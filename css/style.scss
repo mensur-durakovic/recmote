@@ -247,6 +247,14 @@ a {
         display: block;
         margin-right: 28px + 40px; //space plus hamburger button width
       }
+
+      &-home {
+        display: none;
+        @media (min-width: 768px) {
+          display: block;
+          margin-right: 14px + 28px + 40px; //scrollbarplus plus hamburger button plus space width
+        }
+      }
     }
 
     &-hamburger-wrapper {
