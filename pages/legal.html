@@ -13,6 +13,8 @@
     <title>Recmote - Audio Post Production</title>
     <link rel="icon" type="image/png" href="../assets/favicon.ico" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/hamburgers.css" />
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -22,9 +24,6 @@
     <section class="sidedrawer">
         <div class="sidedrawer-backdrop" onclick="toggleSidedrawer()"></div>
         <div class="sidedrawer-menu">
-            <div class="sidedrawer-menu-top">
-                <img src="../assets/close.svg" alt="close" onclick="toggleSidedrawer()">
-            </div>
             <div class="sidedrawer-menu-body">
                 <ul class="sidedrawer-menu-body-items">
                     <li class="sidedrawer-menu-body-item">
@@ -61,8 +60,8 @@
         </div>
     </section>
 
-    <!-- header -->
-    <header class="header header-black">
+    <!-- header and floating button -->
+    <header class="header header-black ">
         <div class="header-left">
             <div class="header-left-logo-shape">
                 <a href="../index.html">
@@ -79,9 +78,18 @@
             <div class="header-right-button">
                 <a class="get-in-touch" href="../pages/get-in-touch.html"> Get in touch </a>
             </div>
-            <img src="../assets/hamburger.svg" alt="hamburger menu" onclick="toggleSidedrawer()">
+
+
+            <!--  <img src="../assets/hamburger.svg" alt="hamburger menu" onclick="toggleSidedrawer()"> -->
         </div>
     </header>
+    <div class="header-right-hamburger-wrapper">
+        <button class="hamburger hamburger--spin" type="button" onclick="toggleSidedrawer()">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
 
     <!-- legal section-->
     <section class="info" id="top-of-page">

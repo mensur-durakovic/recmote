@@ -103,62 +103,68 @@
         </div>
         <div class="contact-wrapper">
             <div class="contact-infos">
-                <div class="contact-infos-item">
-                    <div class="contact-infos-item-icon contact-infos-item-icon-mail">
-                        <img src="../assets/envelope-white.svg" alt="envelope icon">
+                <div class="contact-infos-items">
+                    <div class="contact-infos-item">
+                        <div class="contact-infos-item-icon contact-infos-item-icon-mail">
+                            <img src="../assets/envelope-white.svg" alt="envelope icon">
+                        </div>
+                        <div class="contact-infos-item-text">
+                            <a href="mailto:hola@recmotestudio.com" class="underlined-hover" target="_blank">
+                                hola@recmotestudio.com
+                            </a>
+                        </div>
                     </div>
-                    <div class="contact-infos-item-text">
-                        <a href="mailto:hola@recmotestudio.com" class="underlined-hover" target="_blank">
-                            hola@recmotestudio.com
-                        </a>
+                    <div class="contact-infos-item">
+                        <div class="contact-infos-item-icon contact-infos-item-icon-phone">
+                            <img src="../assets/phone.svg" alt="phone icon">
+                        </div>
+                        <div class="contact-infos-item-text">
+                            <a href="tel:+34 (0) 696 003 156" class="underlined-hover">
+                                +34 (0) 696 003 156
+                            </a>
+                            <a href="tel:+34 (0) 615 841 032" class="underlined-hover">
+                                +34 (0) 615 841 032
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-infos-item">
+                        <div class="contact-infos-item-icon contact-infos-item-icon-geo">
+                            <img src="../assets/geo.svg" alt="geo icon">
+                        </div>
+                        <div class="contact-infos-item-text">
+                            <a href="https://maps.google.com/?q=41.383512, 2.141424" class="underlined-hover"
+                                target="_blank">
+                                C/ Nicaragua 48, 1º 1ª 08024, Barcelona, Spain
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-infos-item">
-                    <div class="contact-infos-item-icon contact-infos-item-icon-phone">
-                        <img src="../assets/phone.svg" alt="phone icon">
-                    </div>
-                    <div class="contact-infos-item-text">
-                        <a href="tel:+34 (0) 696 003 156" class="underlined-hover">
-                            +34 (0) 696 003 156
-                        </a>
-                        <a href="tel:+34 (0) 615 841 032" class="underlined-hover">
-                            +34 (0) 615 841 032
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-infos-item">
-                    <div class="contact-infos-item-icon contact-infos-item-icon-geo">
-                        <img src="../assets/geo.svg" alt="geo icon">
-                    </div>
-                    <div class="contact-infos-item-text">
-                        <a href="https://maps.google.com/?q=41.383512, 2.141424" class="underlined-hover"
-                            target="_blank">
-                            C/ Nicaragua 48, 1º 1ª 08024, Barcelona, Spain
-                        </a>
-                    </div>
-                </div>
+
             </div>
             <div class="contact-form">
                 <form onsubmit="event.preventDefault(); submitForm();">
                     <div class="input-group">
-                        <input type="text" id="contact-form-name" name="name" required autocomplete="off"
-                            onchange="inputNameChanged(this.value)">
+                        <input type="text" id="contact-form-name" name="name" required autocomplete="off">
                         <span class="highlight"></span>
                         <label>Name*</label>
+                        <div class="contact-form-validation contact-form-validation-name">Your name should have at least
+                            3 characters</div>
                     </div>
                     <div class="input-group">
-                        <input type="text" id="contact-form-email" name="email" required autocomplete="off"
-                            onchange="inputEmailChanged(this.value)">
+                        <input type="text" id="contact-form-email" name="email" required autocomplete="off">
                         <span class="highlight"></span>
                         <label>Email address*</label>
-                        <div class="contact-form-validation">Please enter a valid email address</div>
+                        <div class="contact-form-validation contact-form-validation-email">Please enter a valid email
+                            address</div>
                     </div>
 
                     <div class="input-group">
-                        <textarea id="message" name="contact-form-message" required autocomplete="off"
-                            onchange="inputMessageChanged(this.value)"></textarea>
+                        <textarea id="contact-form-message" name="contact-form-message" required
+                            autocomplete="off"></textarea>
                         <span class="highlight"></span>
                         <label>Your message*</label>
+                        <div class="contact-form-validation contact-form-validation-message">Please enter a message with
+                            at least 20 characters</div>
                     </div>
                     <div class="contact-form-disclaimer">
                         <span>
@@ -171,6 +177,9 @@
                     </div>
                     <div class="contact-form-load">
                         <button id="contact-form-button-load">
+                            <!-- <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div> -->
                             <div></div>
                         </button>
                     </div>

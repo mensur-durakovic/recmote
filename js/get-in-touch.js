@@ -1,5 +1,8 @@
 let sidedrawerOpen = false;
 let activeSidedrawerItem = "services";
+let inputNameTouched = false;
+let inputEmailTouched = false;
+let inputMessageTouched = false;
 let inputNameValid = false;
 let inputEmailValid = false;
 let inputMessageValid = false;
@@ -70,28 +73,49 @@ function enableButton() {
   }
 }
 
-function inputNameChanged(val) {
-  inputNameValid = val.length >= 3;
+$("#contact-form-name").on("change keydown paste input", function (e) {
+  inputNameValid = e.target.value.length >= 3;
+  if (inputNameValid) {
+    $(".contact-form-validation-name").removeClass(
+      "contact-form-validation-visible"
+    );
+  } else {
+    $(".contact-form-validation-name").addClass(
+      "contact-form-validation-visible"
+    );
+  }
   enableButton();
-}
-function inputEmailChanged(val) {
-  $(".contact-form-validation").removeClass("contact-form-validation-visible");
-  inputEmailValid = val.length >= 3;
+});
+
+$("#contact-form-email").on("change keydown paste input", function (e) {
+  inputEmailValid =
+    e.target.value.length >= 3 && isValidEmailAddress(e.target.value);
+  if (inputEmailValid) {
+    $(".contact-form-validation-email").removeClass(
+      "contact-form-validation-visible"
+    );
+  } else {
+    $(".contact-form-validation-email").addClass(
+      "contact-form-validation-visible"
+    );
+  }
   enableButton();
-}
-function inputMessageChanged(val) {
-  inputMessageValid = val.length >= 3;
+});
+$("#contact-form-message").on("change keydown paste input", function (e) {
+  inputMessageValid = e.target.value.length >= 20;
+  if (inputMessageValid) {
+    $(".contact-form-validation-message").removeClass(
+      "contact-form-validation-visible"
+    );
+  } else {
+    $(".contact-form-validation-message").addClass(
+      "contact-form-validation-visible"
+    );
+  }
   enableButton();
-}
+});
 
 function submitForm() {
-  const contactEmail = $("#contact-form-email").val();
-  if (!isValidEmailAddress(contactEmail)) {
-    $("#contact-form-button").prop("disabled", true);
-    $(".contact-form-validation").addClass("contact-form-validation-visible");
-    return;
-  }
-
   $(".contact-form-submit").hide(200);
 
   const contactName = $("#contact-form-name").val();
