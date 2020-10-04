@@ -133,7 +133,7 @@ $("#contact-form-message").on("keydown paste input", function (e) {
 });
 
 $("#contact-form-message").on("change", function (e) {
-  inputMessageValid = e.target.value.length >= 20;
+  inputMessageValid = e.target.value.length >= 1;
   if (inputMessageValid) {
     $(".contact-form-validation-message").removeClass(
       "contact-form-validation-visible"

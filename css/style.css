@@ -132,7 +132,7 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   left: 0;
-  padding: 16px 24px;
+  padding: 14px 24px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -144,7 +144,7 @@ a {
 
 @media (min-width: 768px) {
   .header {
-    height: 96px;
+    height: 84px;
     padding: 26px 44px;
   }
 }
@@ -201,12 +201,12 @@ a {
 }
 
 .header-left-logo-shape-image {
-  height: 16px;
-  max-height: 16px;
-  max-width: 16px;
-  min-height: 16px;
-  min-width: 16px;
-  width: 16px;
+  height: 20px;
+  max-height: 20px;
+  max-width: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  width: 20px;
 }
 
 @media (min-width: 768px) {
@@ -276,7 +276,7 @@ a {
 @media (min-width: 768px) {
   .header-right-button {
     display: block;
-    margin-right: 62px;
+    margin-right: 70px;
   }
 }
 
@@ -287,7 +287,7 @@ a {
 @media (min-width: 768px) {
   .header-right-button-home {
     display: block;
-    margin-right: 77px;
+    margin-right: 86px;
   }
 }
 
@@ -301,7 +301,7 @@ a {
 @media (min-width: 768px) {
   .header-right-hamburger-wrapper {
     right: 60px;
-    top: 34px;
+    top: 28px;
   }
 }
 
@@ -321,15 +321,15 @@ a {
   display: flex;
   font-size: 20px;
   font-weight: 500;
-  height: 52px;
+  height: 48px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   line-height: 24px;
-  max-height: 52px;
-  min-height: 52px;
+  max-height: 48px;
+  min-height: 48px;
   min-width: 152px;
-  padding: 15px 32px;
+  padding: 12px 30px;
   text-transform: uppercase;
   -webkit-transition: 0.2s;
   transition: 0.2s;
@@ -497,9 +497,9 @@ a {
 .main-title-text-mobile {
   display: block;
   font-family: "Bebas Neue", cursive;
-  font-size: 57px;
+  font-size: 59px;
   font-style: normal;
-  line-height: 54px;
+  line-height: 57px;
   text-align: left;
 }
 
@@ -1230,7 +1230,7 @@ a {
   font-style: normal;
   font-weight: 400;
   line-height: 17px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-right: 0;
   min-width: 85px;
 }
@@ -1280,7 +1280,7 @@ a {
 
 .footer-body-left-row-item {
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   margin-left: 0;
   margin-right: 0;
   padding: 0;
@@ -2555,40 +2555,31 @@ a {
   }
 }
 
-.contact-infos-item-icon {
-  margin-right: 21px;
-  min-width: 38px;
-}
-
-@media (min-width: 768px) {
-  .contact-infos-item-icon {
-    margin-right: 30px;
-    min-width: 64px;
-  }
-}
-
 .contact-infos-item-icon-mail img {
   height: 24px;
+  margin-right: 21.6px;
   max-height: 24px;
-  max-width: 34px;
+  max-width: 34.8px;
   min-height: 24px;
-  min-width: 34px;
-  width: 34px;
+  min-width: 34.8px;
+  width: 34.8px;
 }
 
 @media (min-width: 768px) {
   .contact-infos-item-icon-mail img {
     height: 32px;
+    margin-right: 24.8px;
     max-height: 32px;
-    max-width: 46px;
+    max-width: 46.4px;
     min-height: 32px;
-    min-width: 46px;
-    width: 46px;
+    min-width: 46.4px;
+    width: 46.4px;
   }
 }
 
 .contact-infos-item-icon-phone img {
   height: 37px;
+  margin-right: 20.4px;
   max-height: 37px;
   max-width: 37px;
   min-height: 37px;
@@ -2599,6 +2590,7 @@ a {
 @media (min-width: 768px) {
   .contact-infos-item-icon-phone img {
     height: 50px;
+    margin-right: 23.2px;
     max-height: 50px;
     max-width: 50px;
     min-height: 50px;
@@ -2609,6 +2601,7 @@ a {
 
 .contact-infos-item-icon-geo img {
   height: 37px;
+  margin-right: 24.9px;
   max-height: 37px;
   max-width: 28px;
   min-height: 37px;
@@ -2618,12 +2611,13 @@ a {
 
 @media (min-width: 768px) {
   .contact-infos-item-icon-geo img {
-    height: 50px;
-    max-height: 50px;
-    max-width: 37px;
-    min-height: 50px;
-    min-width: 37px;
-    width: 37px;
+    height: 49.6px;
+    margin-right: 29.2px;
+    max-height: 49.6px;
+    max-width: 37.2px;
+    min-height: 49.6px;
+    min-width: 37.2px;
+    width: 37.2px;
   }
 }
 
@@ -2693,11 +2687,11 @@ a {
 }
 
 .contact-form > form .input-group {
-  margin: 40px 0 20px;
+  margin: 60px 0 0;
   position: relative;
 }
 
-.contact-form > form .highlight {
+.contact-form > form .input-group .highlight {
   height: 60%;
   left: 0;
   opacity: 0.5;
@@ -2867,6 +2861,10 @@ a {
 .contact-form > form textarea:focus ~ .highlight {
   -webkit-animation: inputHighlighter 0.3s ease;
   animation: inputHighlighter 0.3s ease;
+}
+
+.contact-form-disclaimer {
+  margin-top: 10px;
 }
 
 .contact-form-disclaimer span {
