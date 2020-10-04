@@ -163,6 +163,7 @@ function itemClicked() {
 
 function hoverElementClicked() {
   myPlayer = videojs("example_video_1");
+
   $.magnificPopup.open({
     items: {
       src: "#test-popup",
@@ -171,6 +172,13 @@ function hoverElementClicked() {
     },
     callbacks: {
       open: function () {
+        if (isMobile()) {
+          //add close button
+          $(".mfp-close").html(
+            '<img src="../assets/close-white.svg" class="video-recmote-close" alt="close" >'
+          );
+        }
+
         $.magnificPopup.instance.close = function () {
           // Do whatever else you need to do here
           myPlayer.currentTime(0);

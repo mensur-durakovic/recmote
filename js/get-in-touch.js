@@ -73,7 +73,16 @@ function enableButton() {
   }
 }
 
-$("#contact-form-name").on("change keydown paste input", function (e) {
+$("#contact-form-name").on("keydown paste input", function (e) {
+  inputNameValid = e.target.value.length >= 3;
+  if (inputNameValid) {
+    $(".contact-form-validation-name").removeClass(
+      "contact-form-validation-visible"
+    );
+  }
+  enableButton();
+});
+$("#contact-form-name").on("change", function (e) {
   inputNameValid = e.target.value.length >= 3;
   if (inputNameValid) {
     $(".contact-form-validation-name").removeClass(
@@ -87,7 +96,18 @@ $("#contact-form-name").on("change keydown paste input", function (e) {
   enableButton();
 });
 
-$("#contact-form-email").on("change keydown paste input", function (e) {
+$("#contact-form-email").on("keydown paste input", function (e) {
+  inputEmailValid =
+    e.target.value.length >= 3 && isValidEmailAddress(e.target.value);
+  if (inputEmailValid) {
+    $(".contact-form-validation-email").removeClass(
+      "contact-form-validation-visible"
+    );
+  }
+  enableButton();
+});
+
+$("#contact-form-email").on("change", function (e) {
   inputEmailValid =
     e.target.value.length >= 3 && isValidEmailAddress(e.target.value);
   if (inputEmailValid) {
@@ -101,7 +121,18 @@ $("#contact-form-email").on("change keydown paste input", function (e) {
   }
   enableButton();
 });
-$("#contact-form-message").on("change keydown paste input", function (e) {
+
+$("#contact-form-message").on("keydown paste input", function (e) {
+  inputMessageValid = e.target.value.length >= 20;
+  if (inputMessageValid) {
+    $(".contact-form-validation-message").removeClass(
+      "contact-form-validation-visible"
+    );
+  }
+  enableButton();
+});
+
+$("#contact-form-message").on("change", function (e) {
   inputMessageValid = e.target.value.length >= 20;
   if (inputMessageValid) {
     $(".contact-form-validation-message").removeClass(
