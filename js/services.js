@@ -3,7 +3,9 @@ let activeSidedrawerItem = "services";
 const spanish = "Español";
 const catalan = "Català";
 const english = "English";
-
+function scrollToTop() {
+  $("body").scrollTop(0);
+}
 function changeLanguage(element) {
   if (element.id === "language1" || element.id === "language1-footer") {
     if (element.text === spanish) {

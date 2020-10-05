@@ -4,7 +4,9 @@ let myPlayer;
 const spanish = "Español";
 const catalan = "Català";
 const english = "English";
-
+function scrollToTop() {
+  $("body").scrollTop(0);
+}
 function scaleToFill() {
   $("video.video-background").each(function (_, videoTag) {
     const $video = $(videoTag);
@@ -123,10 +125,9 @@ function hoverOut() {
 }
 
 function scrollToFeaturedWork() {
-  console.log("scrollToFeaturedWork");
   const item = document.getElementById("featured-work");
   const wrapper = document.body;
-  const headerHeight = 96;
+  const headerHeight = 84;
   const count = item.offsetTop - wrapper.scrollTop - headerHeight;
   wrapper.scrollBy({ top: count, left: 0, behavior: "smooth" });
 }

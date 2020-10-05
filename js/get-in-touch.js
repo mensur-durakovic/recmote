@@ -16,7 +16,9 @@ function isValidEmailAddress(emailAddress) {
   );
   return pattern.test(emailAddress);
 }
-
+function scrollToTop() {
+  $("body").scrollTop(0);
+}
 function changeLanguage(element) {
   if (element.id === "language1" || element.id === "language1-footer") {
     if (element.text === spanish) {

@@ -45,6 +45,10 @@ function toggleSidedrawer() {
   }
 }
 
+function scrollToTop() {
+  $("body").scrollTop(0);
+}
+
 function setActiveSidedrawerItem(newActiveSidedrawerItem) {
   $(".sidedrawer-menu-body-item-text").removeClass(
     "sidedrawer-menu-body-item-active"
