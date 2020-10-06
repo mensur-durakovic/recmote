@@ -149,7 +149,7 @@ $("#contact-form-message").on("change", function (e) {
 });
 
 function submitForm() {
-  $(".contact-form-submit").hide(200);
+  $(".contact-form-submit").addClass("contact-form-submit-hidden");
 
   const contactName = $("#contact-form-name").val();
   $(".contact-thanks-title").text(`Thank you ${contactName}!`);

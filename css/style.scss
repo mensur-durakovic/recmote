@@ -184,12 +184,12 @@ a {
       }
 
       &-shape-image {
-        height: 17px;
-        max-height: 17px;
-        max-width: 17px;
-        min-height: 17px;
-        min-width: 17px;
-        width: 17px;
+        height: 20px;
+        max-height: 20px;
+        max-width: 20px;
+        min-height: 20px;
+        min-width: 20px;
+        width: 20px;
 
         @media (min-width: 768px) {
           height: 30px;
@@ -221,10 +221,10 @@ a {
         }
 
         img {
-          height: 16px;
-          max-height: 16px;
+          height: 22px;
+          max-height: 22px;
           max-width: 89px;
-          min-height: 16px;
+          min-height: 22px;
           min-width: 89px;
           width: 89px;
 
@@ -249,14 +249,14 @@ a {
       display: none;
       @media (min-width: 768px) {
         display: block;
-        margin-right: 35px + 35px; //space plus hamburger button width
+        margin-right: 35px + 24px; //space plus hamburger button width
       }
 
       &-home {
         display: none;
         @media (min-width: 768px) {
           display: block;
-          margin-right: 14px + 35px + 37px; //scrollbarplus plus hamburger button plus space width 85px
+          margin-right: 35px + 24px; //scrollbarplus plus hamburger button plus space width 85px
         }
       }
     }
@@ -269,7 +269,7 @@ a {
 
       @media (min-width: 768px) {
         right: 60px;
-        top: 28px;
+        top: 30px;
       }
     }
   }
@@ -391,7 +391,7 @@ a {
 
 .main {
   &-title {
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -636,8 +636,8 @@ a {
           }
 
           @media (min-width: 768px) {
-            font-size: 28px;
-            line-height: 34px;
+            font-size: 24px;
+            line-height: 29px;
           }
 
           &-active {
@@ -1050,13 +1050,14 @@ a {
   }
 
   &-media {
-    display: flex;
     align-items: center;
-    justify-content: flex-start;
+    display: flex;
     height: 15px;
+    justify-content: center;
     margin-bottom: 30px;
 
     @media (min-width: 768px) {
+      justify-content: flex-start;
       margin-bottom: 20px;
     }
 
@@ -1163,8 +1164,8 @@ a {
       font-size: 16px;
       line-height: 20px;
       @media (min-width: 768px) {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
       }
     }
   }
@@ -1936,8 +1937,8 @@ a {
       line-height: 20px;
       margin: 0 0 32px;
       @media (min-width: 768px) {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
         margin: 0 0 32px;
       }
     }
@@ -1963,7 +1964,7 @@ a {
     flex-direction: column;
     justify-content: center;
     min-width: 100%;
-    padding: 42px 0 34px 40px;
+    padding: 42px 0 34px;
     width: 100%;
 
     @media (min-width: 1025px) {
@@ -1981,6 +1982,7 @@ a {
       align-items: center;
       display: flex;
       margin-bottom: 38px;
+      width: fit-content;
 
       &:last-child {
         margin-bottom: 0;
@@ -2066,11 +2068,13 @@ a {
           color: $white;
           font-size: 16px;
           line-height: 20px;
-          max-width: 230px;
+          max-width: 210px;
+          width: fit-content;
           @media (min-width: 768px) {
             font-size: 24px;
             line-height: 29px;
-            max-width: 430px;
+            max-width: 310px;
+            width: fit-content;
           }
         }
       }
@@ -2087,7 +2091,7 @@ a {
       display: flex;
       flex-direction: column;
       min-width: 50%;
-      padding: 0 80px;
+      padding: 20px 80px 40px;
       width: 50%;
     }
 
@@ -2104,7 +2108,7 @@ a {
       }
 
       .textarea-group {
-        margin: 60px 0 0;
+        margin: 55px 0 0;
         position: relative;
       }
 
@@ -2122,10 +2126,10 @@ a {
         -moz-transition: 0.2s ease all;
         -webkit-transition: 0.2s ease all;
         color: $disclaimer-color;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
         left: 5px;
-        line-height: 24px;
+        line-height: 22px;
         pointer-events: none;
         position: absolute;
         top: 10px;
@@ -2141,10 +2145,10 @@ a {
         color: $black-russian;
         display: block;
         font-family: $montserrat;
-        font-size: 20px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
-        line-height: 24px;
+        line-height: 22px;
         min-height: 44px;
         padding: 10px 10px 10px 5px;
         width: 100%;
@@ -2190,10 +2194,10 @@ a {
         -moz-transition: 0.2s ease all;
         -webkit-transition: 0.2s ease all;
         color: $disclaimer-color;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
         left: 5px;
-        line-height: 24px;
+        line-height: 22px;
         pointer-events: none;
         position: absolute;
         top: 10px;
@@ -2208,11 +2212,11 @@ a {
         color: $black-russian;
         display: block;
         font-family: $montserrat;
-        font-size: 20px;
+        font-size: 18px;
         font-style: normal;
         font-weight: 400;
         height: 56px;
-        line-height: 24px;
+        line-height: 22px;
         max-height: 56px;
         min-height: 56px;
         outline: none;
@@ -2281,6 +2285,10 @@ a {
       display: flex;
       justify-content: center;
       margin-top: 40px;
+
+      &-hidden {
+        display: none;
+      }
 
       button {
         align-items: center;
@@ -2489,8 +2497,8 @@ a {
       text-transform: uppercase;
 
       @media (min-width: 768px) {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
       }
     }
 
@@ -2503,8 +2511,8 @@ a {
       padding: 0;
 
       @media (min-width: 768px) {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
       }
 
       a {
