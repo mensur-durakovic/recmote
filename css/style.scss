@@ -166,7 +166,7 @@ a {
       }
 
       &-shape-link {
-        height: 16px;
+        /*         height: 16px;
         max-height: 16px;
         max-width: 16px;
         min-height: 16px;
@@ -180,60 +180,39 @@ a {
           min-height: 30px;
           min-width: 30px;
           width: 30px;
-        }
+        } */
       }
 
       &-shape-image {
-        height: 20px;
-        max-height: 20px;
-        max-width: 20px;
-        min-height: 20px;
-        min-width: 20px;
-        width: 20px;
+        height: 21px;
+        width: 21px;
 
         @media (min-width: 768px) {
           height: 30px;
-          max-height: 30px;
-          max-width: 30px;
-          min-height: 30px;
-          min-width: 30px;
           width: 30px;
         }
       }
 
       &-text {
         a {
-          height: 17px;
-          max-height: 17px;
-          max-width: 89px;
-          min-height: 17px;
-          min-width: 89px;
-          width: 89px;
+          display: block;
 
-          @media (min-width: 768px) {
+          /*           @media (min-width: 768px) {
             height: 30px;
             max-height: 30px;
             max-width: 167px;
             min-height: 30px;
             min-width: 167px;
             width: 167px;
-          }
+          } */
         }
 
         img {
-          height: 22px;
-          max-height: 22px;
-          max-width: 89px;
-          min-height: 22px;
-          min-width: 89px;
-          width: 89px;
+          height: 18px;
+          width: 100px;
 
           @media (min-width: 768px) {
             height: 30px;
-            max-height: 30px;
-            max-width: 167px;
-            min-height: 30px;
-            min-width: 167px;
             width: 167px;
           }
         }
